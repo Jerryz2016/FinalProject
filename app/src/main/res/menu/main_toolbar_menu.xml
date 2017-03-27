@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_one"
+        android:icon="@drawable/living"
+
+        android:orderInCategory="101"
+        android:title="@string/main_menu1"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_two"
+        android:icon="@drawable/kitchen"
+
+        android:orderInCategory="122"
+        android:title="@string/main_menu2"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_three"
+        android:icon="@drawable/house"
+        android:orderInCategory="133"
+        android:title="@string/main_menu3"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_four"
+
+        android:icon="@drawable/car"
+        android:orderInCategory="144"
+        android:title="@string/main_menu4"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="155"
+        android:title="@string/main_menu5"
+        app:showAsAction="never" />
+</menu>
