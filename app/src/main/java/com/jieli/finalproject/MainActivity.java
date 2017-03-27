@@ -46,9 +46,16 @@ public class MainActivity extends AppCompatActivity {
                 toast3.show();
 
             case R.id.action_four:
-                Log.d("Toolbar", "About selected");
+                Log.d("Toolbar", "Option4 selected");
+                //           Intent intent = new Intent(getApplicationContext(), CarSetting.class);
+                //            startActivity(intent);
                 Toast toast4 = Toast.makeText(this, "Smart Automobile Version 1.0, by Jieli Zhang", Toast.LENGTH_LONG);
                 toast4.show();
+                break;
+            case R.id.action_help:
+                Log.d("Toolbar", "Help selected");
+                Toast toast5 = Toast.makeText(this, "Smart House Version 1.0, by Chao Gu,Haixia Feng,Jie Wang,Jieli Zhang", Toast.LENGTH_LONG);
+                toast5.show();
                 break;
         }
         return true;
