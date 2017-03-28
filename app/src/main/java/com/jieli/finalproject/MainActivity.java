@@ -1,5 +1,7 @@
 package com.jieli.finalproject;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import static com.jieli.finalproject.R.menu.main_toolbar_menu;
 
 public class MainActivity extends AppCompatActivity {
+    Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ctx = this;
     }
 
     public boolean onCreateOptionsMenu(Menu m) {
@@ -47,10 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_four:
                 Log.d("Toolbar", "Option4 selected");
-                //           Intent intent = new Intent(getApplicationContext(), CarSetting.class);
-                //            startActivity(intent);
+
                 Toast toast4 = Toast.makeText(this, "Smart Automobile Version 1.0, by Jieli Zhang", Toast.LENGTH_LONG);
                 toast4.show();
+                Intent intent = new Intent(ctx, CarSettings.class);
+                startActivity(intent);
                 break;
             case R.id.action_help:
                 Log.d("Toolbar", "Help selected");
