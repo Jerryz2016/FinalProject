@@ -9,5 +9,11 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
 
+    <string-array name="button_array">
+        <item>microwave</item>
+        <item>fridge</item>
+        <item>main light</item>
+    </string-array>
+
 
 </resources>
