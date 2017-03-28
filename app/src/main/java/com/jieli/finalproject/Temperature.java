@@ -4,12 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+//  create empty temperature fragment
 public class Temperature extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temperature);
+        setContentView(R.layout.car_temperature);   //set empty temperature frame layout with id temp_frame_layout
 
         Toast toast0 = Toast.makeText(this, "Setting Temperature fragement", Toast.LENGTH_SHORT);
         toast0.show();

@@ -19,9 +19,9 @@ import static android.app.Activity.RESULT_OK;
 
 public class CarTemperatureFragment extends Fragment {
     Context parent;
-    int temp;
-    String message;
+    String temp;
     boolean isTablet;
+    TextView textTemperature;
 
 
     //no matter how you got here, the data is in the getArguments
@@ -29,7 +29,7 @@ public class CarTemperatureFragment extends Fragment {
     public void onCreate(Bundle b) {
         super.onCreate(b);
         Bundle bundle = getArguments();
-        temp = bundle.getInt("Temperature");
+        temp = bundle.getString("Temperature");
         isTablet = bundle.getBoolean("isTablet");
 
     }
@@ -43,23 +43,25 @@ public class CarTemperatureFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
-        View gui = inflater.inflate(R.layout.temp_frag_layout, null);
+        View gui = inflater.inflate(R.layout.car_temp_frag_layout, null);
 
-        TextView textViewTemperature = (TextView) gui.findViewById(R.id.temp_dis_textview);
-        textViewTemperature.setText("Temperature: " + temp);
+        textTemperature = (TextView) gui.findViewById(R.id.temp_set);
+        textTemperature.setText(temp);
 
 
         Button okButton = (Button) gui.findViewById(R.id.temp_ok);
         okButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                temp = textTemperature.getText().toString();
                 if (isTablet) {
+                    //todo call store method in CarSettings class to save temp in db
                     CarTemperatureFragment mf = (CarTemperatureFragment) getFragmentManager().findFragmentById(R.id.car_framelayout); //remove the sw600dp frage
                     getFragmentManager().beginTransaction().remove(mf).commit();
 
                 } else {
                     Intent data = new Intent();
-                    data.putExtra("Temperature", 24);
+                    data.putExtra("Temperature", temp);
                     getActivity().setResult(RESULT_OK, data);
                     getActivity().finish();
                 }

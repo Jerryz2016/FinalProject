@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class CarSettings extends AppCompatActivity {
     Context ctx;
+    String temp;
     private ListView listView;
     private String[] carSettings = {"Temperature", "Radio", "GPS", "Lights"};
     private Boolean isTablet;  // for to check if a phone or tablet
@@ -35,7 +36,7 @@ public class CarSettings extends AppCompatActivity {
                         Toast toast0 = Toast.makeText(ctx, "Setting Temperature", Toast.LENGTH_SHORT);
                         toast0.show();
                         Bundle bundle = new Bundle();
-                        bundle.putInt("Temperature", 25);
+                        bundle.putString("Temperature", temp);
 
                         if (isTablet) {
                             bundle.putBoolean("isTablet", true);
@@ -78,6 +79,23 @@ public class CarSettings extends AppCompatActivity {
         Log.d("carSettings", "OnCreate");
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case 10:                // temperature
+                    Bundle extras = data.getExtras();
+                    temp = (String) extras.get("Temperature");
+                    // todo store in db
+
+            }
+        }
+    }
+
+    public void storeSettings() {
+
+    }
+
     protected void onResume() {
         super.onResume();
         Log.d("CarSettings", "OnResume");
@@ -96,6 +114,12 @@ public class CarSettings extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.e("CarSettings", "onStop");
+    }
+
+    public void onDestory() {
+        super.onDestroy();
+        //       if (cursor != null) cursor.close();
+        //       if (dbHelper != null)  dbHelper.close();
     }
 
 
