@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Toolbar", "Option1 selected");
                 Toast toast1 = Toast.makeText(this, "Smart Living Room Version 1.0, by Jie Wang", Toast.LENGTH_LONG);
                 toast1.show();
+
+                Intent livingRoomIntent = new Intent(MainActivity.this,LivingRoomActivity.class);
+                startActivity(livingRoomIntent);
                 break;
 
             case R.id.action_two:            //option2 clicked
