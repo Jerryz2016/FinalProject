@@ -21,12 +21,14 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".KitchenStartActivity">
+        <activity android:name=".HouseSettingStartActivity">
 
         </activity>
         <activity android:name=".CarSettings" />
         <activity android:name=".Temperature" />
-        <activity android:name=".LivingRoomActivity"></activity>
+        <activity android:name=".LivingRoomActivity"> </activity>
+        <activity android:name=".KitchenStartActivity"/>
+
     </application>
 
 </manifest>
