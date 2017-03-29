@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast toast1 = Toast.makeText(this, "Smart Living Room Version 1.0, by Jie Wang", Toast.LENGTH_LONG);
                 toast1.show();
 
-                Intent livingRoomIntent = new Intent(MainActivity.this,LivingRoomActivity.class);
+                Intent livingRoomIntent = new Intent(MainActivity.this, LivingRoomActivity.class);
                 startActivity(livingRoomIntent);
                 break;
 
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Toolbar", "Option3 selected");
                 Toast toast3 = Toast.makeText(this, "Smart House Setting Version 1.0, by Haixia Feng", Toast.LENGTH_LONG);
                 toast3.show();
+                break;
 
             case R.id.action_four:
                 Log.d("Toolbar", "Option4 selected");
