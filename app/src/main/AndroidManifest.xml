@@ -24,9 +24,9 @@
         <activity android:name=".KitchenStartActivity">
 
         </activity>
-        <activity android:name=".CarSettings"></activity>
-        <activity android:name=".Temperature">
-        </activity>
+        <activity android:name=".CarSettings" />
+        <activity android:name=".Temperature" />
+        <activity android:name=".LivingRoomActivity"></activity>
     </application>
 
 </manifest>

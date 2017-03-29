@@ -20,5 +20,12 @@
         <item>main light</item>
     </string-array>
 
+    <string-array name="livingroom_array">
+        <item> Lamp1</item>
+        <item> Lamp2</item>
+        <item> Lamp3</item>
+        <item> Television</item>
+        <item> Window Blinds</item>
 
+    </string-array>
 </resources>
