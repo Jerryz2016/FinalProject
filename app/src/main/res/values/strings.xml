@@ -20,6 +20,14 @@
         <item>main light</item>
     </string-array>
 
+    <string-array name="houseSettingButton_array">
+        <item>Garage</item>
+        <item>House Temperature</item>
+        <item>Outside Weather</item>
+    </string-array>
+
+
+
     <string-array name="livingroom_array">
         <item> Lamp1</item>
         <item> Lamp2</item>
