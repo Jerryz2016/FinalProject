@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Toolbar", "Option3 selected");
                 Toast toast3 = Toast.makeText(this, "Smart House Setting Version 1.0, by Haixia Feng", Toast.LENGTH_LONG);
                 toast3.show();
+
+                Intent toHouseSetting = new Intent(getApplicationContext(), HouseSettingStartActivity.class);
+                startActivity(toHouseSetting);
+
                 break;
 
             case R.id.action_four:
