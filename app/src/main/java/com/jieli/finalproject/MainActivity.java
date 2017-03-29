@@ -1,5 +1,7 @@
 package com.jieli.finalproject;
 
+
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_two:            //option2 clicked
                 Log.d("Toolbar", "Option2 selected");
-                Toast toast2 = Toast.makeText(this, "Smart Kitchen Version 1.0, by Chao Gu", Toast.LENGTH_LONG);
+                Toast toast2 = Toast.makeText(this, "Smart Kitchen Version 1.0, by Chao Gu", Toast.LENGTH_SHORT);
                 toast2.show();
+                Intent toKitchen = new Intent(getApplicationContext(), KitchenStartActivity.class);
+                startActivity(toKitchen);
                 break;
 
             case R.id.action_three:                     //option3 clicked
