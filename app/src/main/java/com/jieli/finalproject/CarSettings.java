@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -75,6 +76,14 @@ public class CarSettings extends AppCompatActivity {
         listView.setAdapter(new ArrayAdapter<>(this, R.layout.car_lv_row, carSettings));
         //step 1, find out if you are on a phone or tablet.
         isTablet = (findViewById(R.id.car_framelayout) != null);
+        //ext car setting
+        Button carExitButton = (Button) findViewById(R.id.car_setting_exit);
+        carExitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Log.d("carSettings", "OnCreate");
     }
