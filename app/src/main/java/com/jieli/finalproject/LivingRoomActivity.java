@@ -2,8 +2,8 @@ package com.jieli.finalproject;
 
 import android.content.Intent;
 import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import static com.jieli.finalproject.R.id.button_living;
-import static com.jieli.finalproject.R.id.livingRoomListView;
 
 public class LivingRoomActivity extends AppCompatActivity {
     protected static final String ACTIVITY_NAME = "LivingRoomActivity";
@@ -29,12 +28,12 @@ public class LivingRoomActivity extends AppCompatActivity {
         livingRoomItems = getResources().getStringArray(R.array.livingroom_array);
 
 
-        livingRoomListView = (ListView)findViewById(R.id.livingRoomListView);
-        livingRoomListView.setAdapter(new ArrayAdapter<String>(this,  R.layout.living_room_items, livingRoomItems));
+        livingRoomListView = (ListView) findViewById(R.id.livingRoomListView);
+        livingRoomListView.setAdapter(new ArrayAdapter<String>(this, R.layout.living_room_items, livingRoomItems));
 
-        livingRoomListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        livingRoomListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(LivingRoomActivity.this, "Setting " + livingRoomItems[position], Toast.LENGTH_SHORT).show();
 
                 switch (position) {
@@ -45,7 +44,7 @@ public class LivingRoomActivity extends AppCompatActivity {
                     case 2:   //setting Lamp3
                         Log.i("ListView", "Lamp3");
                     case 3:   //setting Television
-                        Log.i("ListView",  "Television");
+                        Log.i("ListView", "Television");
 
 
                     case 4:   //setting Smart Window Blinds
@@ -55,11 +54,11 @@ public class LivingRoomActivity extends AppCompatActivity {
             }
         });
 
-        Button button_exit = (Button)findViewById(button_living);
-        button_exit.setOnClickListener(new View.OnClickListener(){
+        Button button_exit = (Button) findViewById(button_living);
+        button_exit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                Log.i (ACTIVITY_NAME, "User clicked Start Chart");
+            public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chart");
                 Intent intent_exit = new Intent(LivingRoomActivity.this, MainActivity.class);
                 startActivity(intent_exit);
             }

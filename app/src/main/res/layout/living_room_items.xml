@@ -5,6 +5,5 @@
     android:textStyle="bold"
     android:text="This is a Test"
     android:textSize="24sp"
-    android:textColor="#0000ff">
-</TextView>
+    android:textColor="#0000ff"></TextView>
 
