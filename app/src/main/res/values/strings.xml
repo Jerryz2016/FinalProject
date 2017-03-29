@@ -5,6 +5,11 @@
     <string name="main_menu3">House Setting</string>
     <string name="main_menu4">Automobile</string>
     <string name="main_menu5">Help</string>
+    <string name="help_living">Living Room</string>
+    <string name="help_kitchen">Kitchen</string>
+    <string name="help_house">House</string>
+    <string name="help_car">Automobile</string>
+
 
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>

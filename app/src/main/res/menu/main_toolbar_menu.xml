@@ -35,4 +35,27 @@
         android:orderInCategory="155"
         android:title="@string/main_menu5"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/help_living"
+        android:orderInCategory="166"
+        android:title="@string/help_living"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/help_kitchen"
+        android:orderInCategory="177"
+        android:title="@string/help_kitchen"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/help_house"
+        android:orderInCategory="188"
+        android:title="@string/help_house"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/help_car"
+        android:orderInCategory="199"
+        android:title="@string/help_car"
+        app:showAsAction="never" />
+
+
 </menu>
