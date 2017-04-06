@@ -3,24 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jieli.finalproject.CarSettings">
+    tools:context="com.jieli.finalproject.CarSettings"
+    android:background="#FFFFFF">
 
-    <ListView
-        android:id="@+id/car_listview"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="50dp" />
-
-    <Button
-        android:id="@+id/car_setting_exit"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="47dp"
-        android:layout_marginEnd="137dp"
-        android:layout_weight="1"
-        android:text="exit" />
+        android:id="@+id/header"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_dark"
+            android:text="Smart Automobile"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+
+        <ListView
+            android:id="@+id/car_listview"
+            android:layout_width="match_parent"
+            android:layout_height="295dp"
+            android:layout_marginTop="50dp" />
+
+        <Button
+            android:id="@+id/car_setting_exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_light"
+            android:text="exit"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
 
 </RelativeLayout>

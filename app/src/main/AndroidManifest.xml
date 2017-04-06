@@ -19,16 +19,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".HouseSettingStartActivity">
-
         </activity>
         <activity android:name=".CarSettings" />
-        <activity android:name=".Temperature" />
-        <activity android:name=".LivingRoomActivity"> </activity>
-        <activity android:name=".KitchenStartActivity"/>
-
+        <activity android:name=".CarTemperature" />
+        <activity android:name=".LivingRoomActivity"></activity>
+        <activity android:name=".KitchenStartActivity" />
+        <activity android:name=".CarLights"></activity>
+        <activity
+            android:name=".CarRadio"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".CarRadioChange"></activity>
     </application>
 
 </manifest>

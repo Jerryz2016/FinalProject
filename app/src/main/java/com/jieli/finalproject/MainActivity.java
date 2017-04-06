@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_four:
                 Log.d("Toolbar", "Option4 selected");
 
-                Toast toast4 = Toast.makeText(this, "Smart Automobile Version 1.0, by Jieli Zhang", Toast.LENGTH_LONG);
+                Toast toast4 = Toast.makeText(this, "Smart Automobile Version 1.0, by Jieli Zhang", Toast.LENGTH_SHORT);
                 toast4.show();
                 Intent intent = new Intent(ctx, CarSettings.class);
                 startActivity(intent);
