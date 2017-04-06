@@ -46,7 +46,7 @@ public class KitchenStartActivity extends AppCompatActivity {
         list2.add("Main Ceiling Light");
         isTablet = (findViewById(R.id.detail) != null);
 
-
+/*
         dbAdapter = new DBAdapter(context);
         dbAdapter.open();
         dbAdapter.insertItem("Fridge", "Regular Fridge", "5" + DEGREE);
@@ -54,11 +54,11 @@ public class KitchenStartActivity extends AppCompatActivity {
         dbAdapter.insertItem("Fridge", "Samsung Fridge", "3" + DEGREE);
         dbAdapter.insertItem("Freezer", "Samsung Freezer", "-20" + DEGREE);
         dbAdapter.insertItem("Light", "Main Ceiling Light", "ON");
-
+*/
+new createDB().execute("");
 
         button_List = (ListView) findViewById(R.id.list_item);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list1);
-        button_List.setAdapter(adapter);
+
         button_List.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -159,7 +159,8 @@ public class KitchenStartActivity extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(String result) {
-
+            adapter = new ArrayAdapter<String>(KitchenStartActivity.this, android.R.layout.simple_list_item_1, list1);
+            button_List.setAdapter(adapter);
         }
     }
 
