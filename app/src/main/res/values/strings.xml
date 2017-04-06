@@ -35,4 +35,14 @@
         <item> Window Blinds</item>
 
     </string-array>
+
+    <string name="help_car_title">Car Help</string>
+    <string name="help_car_version">Help for Smart Car Version 1.0, by Group3:Jieli Zhang\n</string>
+    <string name="help_car_info">
+        1,Click the icon of Car on the Toolbar, Smart Automobile screen will be displayed with a list
+          of Temperature, Radio, GPS and Lights items.\n
+        2,Click any of the listed item which you want to set,it will display you the setting screen
+          respectively.\n
+        3,Following the prompt on each screen,you will set all the settings of the car.
+    </string>>
 </resources>
