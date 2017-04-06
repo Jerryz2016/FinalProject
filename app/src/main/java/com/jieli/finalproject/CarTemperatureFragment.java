@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,8 @@ public class CarTemperatureFragment extends Fragment {
     public void onCreate(Bundle b) {
         super.onCreate(b);
         Bundle bundle = getArguments();
-        temp = bundle.getString("Temperature");
+        temp = bundle.getString("carTemperature");
+        Log.i("fragment temp", temp);
         isTablet = bundle.getBoolean("isTablet");
 
     }
@@ -55,13 +57,15 @@ public class CarTemperatureFragment extends Fragment {
             public void onClick(View v) {
                 temp = textTemperature.getText().toString();
                 if (isTablet) {
-                    //todo call store method in CarSettings class to save temp in db
+                    //call store method in CarSettings class to save temp in db
+                    Log.i("carfragment isTablet: ", temp);
+                    ((CarSettings) getActivity()).saveTempPreference("cartemperatrure", temp);
                     CarTemperatureFragment mf = (CarTemperatureFragment) getFragmentManager().findFragmentById(R.id.car_framelayout); //remove the sw600dp frage
                     getFragmentManager().beginTransaction().remove(mf).commit();
 
                 } else {
                     Intent data = new Intent();
-                    data.putExtra("Temperature", temp);
+                    data.putExtra("carTemperature", temp);
                     getActivity().setResult(RESULT_OK, data);
                     getActivity().finish();
                 }
