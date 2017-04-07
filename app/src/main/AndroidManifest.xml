@@ -4,6 +4,8 @@
 
     <supports-screens android:requiresSmallestWidthDp="600" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +23,15 @@
             </intent-filter>
 
         </activity>
+        
+        <activity android:name=".HouseTemperature" />
+             
+        <activity android:name=".OutsideWeather" />
+        <activity
+            android:name=".HouseGarage"
+            android:label="@string/title_activity_house_garage"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        
 
         <activity android:name=".HouseSettingStartActivity"/>
         <activity android:name=".CarSettings" />
@@ -29,23 +40,13 @@
         <activity android:name=".KitchenStartActivity"/>
         <activity android:name=".MicrowaveActivity" />
         <activity android:name=".FridgeActivity" />
-
-        <activity android:name=".HouseSettingStartActivity">
-
-        </activity>
-        <activity android:name=".HouseSettingStartActivity" />
-        <activity android:name=".CarSettings" />
-
-        <activity android:name="Temperature" />
-        <activity android:name=".LivingRoomActivity" />
-        <activity android:name=".KitchenStartActivity" />
+     
         <activity android:name=".Tv" />
 
         <activity android:name=".LivingDatabaseActivity"></activity>
 
         <activity android:name=".CarTemperature" />
-        <activity android:name=".LivingRoomActivity"></activity>
-        <activity android:name=".KitchenStartActivity" />
+                
         <activity android:name=".CarLights"></activity>
         <activity
             android:name=".CarRadio"

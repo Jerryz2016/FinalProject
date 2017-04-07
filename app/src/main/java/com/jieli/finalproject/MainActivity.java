@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,6 +16,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import android.widget.EditText;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -104,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     public void dialog(int title, int version, int helpinfo) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
@@ -131,5 +138,6 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 }
 
