@@ -35,15 +35,15 @@
         android:id="@+id/smart_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/appBarLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="29dp"
         android:fontFamily="serif"
         android:text="Smart Home"
         android:textAllCaps="true"
         android:textColor="@android:color/background_light"
         android:textSize="40sp"
         android:typeface="normal"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

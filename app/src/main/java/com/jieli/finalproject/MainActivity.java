@@ -1,12 +1,13 @@
 package com.jieli.finalproject;
 
 
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,7 +16,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
 import android.widget.EditText;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_four:
                 Log.d("Toolbar", "Option4 selected");
 
-                Toast toast4 = Toast.makeText(this, "Smart Automobile Version 1.0, by Jieli Zhang", Toast.LENGTH_LONG);
+                Toast toast4 = Toast.makeText(this, "Smart Automobile Version 1.0, by Jieli Zhang", Toast.LENGTH_SHORT);
                 toast4.show();
                 Intent intent = new Intent(ctx, CarSettings.class);
                 startActivity(intent);
@@ -98,14 +101,43 @@ public class MainActivity extends AppCompatActivity {
                 toast8.show();
                 break;
             case R.id.help_car:
-                Log.d("Toolbar", "Help selected");
-                Toast toast9 = Toast.makeText(this, "Instruction for Smart Car Version 1.0, by Group3:Jieli Zhang", Toast.LENGTH_LONG);
-                toast9.show();
+//                Log.d("Toolbar", "Help selected");
+//                Toast toast9 = Toast.makeText(this, "Instruction for Smart Car Version 1.0, by Group3:Jieli Zhang", Toast.LENGTH_LONG);
+//                toast9.show();
+                dialog(R.string.help_car_title, R.string.help_car_version, R.string.help_car_info);
                 break;
         }
         return true;
     }
 
+
+    public void dialog(int title, int version, int helpinfo) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
+        builder.setTitle(title);
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.help_dialog_layout, null);
+        builder.setView(view);
+        TextView versionInfo = (TextView) view.findViewById(R.id.version_info);
+        versionInfo.setText(version);
+        TextView helpInfo = (TextView) view.findViewById(R.id.help_info);
+        helpInfo.setText(helpinfo);
+
+// Add the buttons
+        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button
+            }
+        });
+ /*       builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //do nothing
+            }
+        });   */
+        // Create the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
 }
 

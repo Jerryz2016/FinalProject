@@ -5,6 +5,17 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_light"
+        android:text="Car Temperature Setting"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/temp_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
