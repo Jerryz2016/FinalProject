@@ -56,4 +56,7 @@
         3,Following the prompt on each screen,you will set all the settings of the car.
     </string>
 
+    <string name="button_negative">NoNoNoNo</string>
+    <string name="button_positive">YesYes</string>
+
 </resources>

@@ -21,8 +21,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
         
         <activity android:name=".HouseTemperature" />
              
@@ -33,27 +33,25 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         
 
-        <activity android:name=".HouseSettingStartActivity"/>
         <activity android:name=".CarSettings" />
-        <activity android:name=".Temperature" />
-        <activity android:name=".LivingRoomActivity"/>
-        <activity android:name=".KitchenStartActivity"/>
+        <activity android:name=".LivingRoomActivity" />
+        <activity android:name=".KitchenStartActivity" />
         <activity android:name=".MicrowaveActivity" />
         <activity android:name=".FridgeActivity" />
-     
+
+        <activity android:name=".HouseSettingStartActivity" />
+
         <activity android:name=".Tv" />
-
-        <activity android:name=".LivingDatabaseActivity"></activity>
-
+        <activity android:name=".LivingDatabaseActivity" />
         <activity android:name=".CarTemperature" />
-                
-        <activity android:name=".CarLights"></activity>
+
+        <activity android:name=".CarLights" />
+
         <activity
             android:name=".CarRadio"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".CarRadioChange"></activity>
-
-
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".CarRadioChange" />
+        <activity android:name=".Lamp3"></activity>
     </application>
 
 </manifest>
