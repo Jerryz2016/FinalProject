@@ -48,7 +48,9 @@ public class CarSettings extends AppCompatActivity {
                         bundle.putString("carTemperature", temp);
 
                         if (isTablet) {
-
+                            bundle.putBoolean("isTablet", true);
+                            CarTemperatureFragment tfrag = new CarTemperatureFragment();
+                            tfrag.setArguments(bundle);getFragmentManager().beginTransaction().replace(R.id.car_framelayout, tfrag).commit();
 
                         } else {
                             Intent temIntent = new Intent(ctx, CarTemperature.class);
