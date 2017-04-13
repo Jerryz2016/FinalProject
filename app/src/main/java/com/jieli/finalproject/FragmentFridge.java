@@ -4,32 +4,37 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
+import static android.app.Activity.RESULT_OK;
 
-public class FridgeActivity extends Activity {
+
+public class FragmentFridge extends Fragment {
     TextView typeText, nameText, temperatureText;
     NumberPicker temperaturePicker;
     Button setting, buttonReturn;
     int temperature, position;
-    Intent intent;
+    Bundle bundle;
     final String DEGREE = "\u00b0";
+    View root;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fridge);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        root = inflater.inflate(R.layout.fragment_fridge, null);
 
-        typeText = (TextView) findViewById(R.id.type_text);
-        nameText = (TextView) findViewById(R.id.name_text);
-        temperatureText = (TextView) findViewById(R.id.temperature_text);
-        temperaturePicker = (NumberPicker) findViewById(R.id.temperaturePicker);
-        setting = (Button) findViewById(R.id.setting);
-        buttonReturn = (Button) findViewById(R.id.button_return);
+        typeText = (TextView) root.findViewById(R.id.type_text);
+        nameText = (TextView) root.findViewById(R.id.name_text);
+        temperatureText = (TextView) root.findViewById(R.id.temperature_text);
+        temperaturePicker = (NumberPicker) root.findViewById(R.id.temperaturePicker);
+        setting = (Button) root.findViewById(R.id.setting);
+        buttonReturn = (Button) root.findViewById(R.id.button_return);
 
         //---set the picker with negative values, max value and min value---
         String[] s = {"-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6",
@@ -40,11 +45,11 @@ public class FridgeActivity extends Activity {
         temperaturePicker.setValue(0);
 
 
-        intent = getIntent();
-        position = intent.getIntExtra("position", 1);
-        typeText.setText(intent.getStringExtra("type"));
-        nameText.setText(intent.getStringExtra("name"));
-        temperatureText.setText(intent.getStringExtra("setting")+DEGREE);
+        bundle = getArguments();
+        position = bundle.getInt("position");
+        typeText.setText(bundle.getString("type"));
+        nameText.setText(bundle.getString("name"));
+        temperatureText.setText(bundle.getString("setting") + DEGREE);
 
         //---read the value from picker---
         temperaturePicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
@@ -59,7 +64,7 @@ public class FridgeActivity extends Activity {
             @Override
             public void onClick(View v) {
                 temperatureText.setText(String.valueOf(temperature) + DEGREE);
-                Snackbar.make(v, "Set temperature to "+ String.valueOf(temperature) + DEGREE, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Snackbar.make(v, "Set temperature to " + String.valueOf(temperature) + DEGREE, Snackbar.LENGTH_LONG).setAction("Action", null).show();
             }
         });
 
@@ -71,10 +76,10 @@ public class FridgeActivity extends Activity {
                 backIntent.putExtra("position", position);
                 backIntent.putExtra("setting", String.valueOf(temperature));
                 backIntent.putExtra("name", nameText.getText().toString());
-                setResult(RESULT_OK, backIntent);
-                finish();
+                getActivity().setResult(RESULT_OK, backIntent);
+                getActivity().finish();
             }
         });
-
+        return root;
     }
 }
