@@ -6,13 +6,6 @@
     tools:context="com.jieli.finalproject.CarSettings"
     android:background="#FFFFFF">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/header"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
 
         <TextView
             android:id="@+id/headerTitle"
@@ -25,24 +18,25 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
-
-        <ListView
-            android:id="@+id/car_listview"
-            android:layout_width="match_parent"
-            android:layout_height="295dp"
-            android:layout_marginTop="50dp" />
-
         <Button
             android:id="@+id/car_setting_exit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
             android:background="@android:color/holo_green_light"
             android:text="exit"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-    </LinearLayout>
+        <ListView
+            android:id="@+id/car_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headerTitle"
+            android:layout_above="@id/car_setting_exit"
+            android:layout_marginTop="50dp" />
 
 
 </RelativeLayout>
