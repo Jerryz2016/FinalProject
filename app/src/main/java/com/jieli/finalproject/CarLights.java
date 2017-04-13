@@ -11,15 +11,12 @@ import android.widget.ToggleButton;
 
 /**
  * CST2335 Final Project-Automobile activity
- * <p>
  * The Class Carlights.java, defines and deal with the headlights and dimmable lights for
  * the setting of turning on the headlights (normal, high), as well as a dimmable light(drak to light).
- * <p>
  * Group   3
- *
  * @author Jieli Zhang
  * @version v1.0
- *          Date      2017.04.12
+ * Date      2017.04.12
  */
 
 public class CarLights extends AppCompatActivity {

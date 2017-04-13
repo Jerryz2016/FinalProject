@@ -16,10 +16,8 @@ import static android.app.Activity.RESULT_OK;
 
 /**
  * CST2335 Final Project-Automobile activity
- *
  * The Class CarTemperatureFragment, used to creat a fragment for displaying the temperature stored
  * or setting the new temperature either for a tablet or a phone.
- *
  * Group     3
  * @author Jieli Zhang
  * @version v1.0

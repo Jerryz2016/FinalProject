@@ -7,15 +7,12 @@ import android.widget.Toast;
 
 /**
  * CST2335 Final Project-Automobile activity
- * <p>
  * The Class CarTemperature, using an empty framelayout for a phone to add a fragment to
  * display temperature.
- * <p>
  * Group     3
- *
  * @author Jieli Zhang
  * @version v1.0
- *          Date      2017.04.12
+ * Date      2017.04.12
  */
 //  create empty temperature fragment
 public class CarTemperature extends AppCompatActivity {

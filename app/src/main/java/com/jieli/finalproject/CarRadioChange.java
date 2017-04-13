@@ -11,20 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 /**
  * CST2335 Final Project-Automobile activity
- * <p>
  * The Class CarRadioChange, providing the infterface for user to add, update or delete a radio.
- * <p>
  * Group     3
- *
  * @author Jieli Zhang
  * @version v1.0
- *          Date      2017.04.12
+ * Date      2017.04.12
  */
 public class CarRadioChange extends AppCompatActivity {
 
@@ -49,13 +44,13 @@ public class CarRadioChange extends AppCompatActivity {
      */
     private EditText radioChannel;
     /**
-     * the mute button
-     */
+     /*    * the mute button
+     *//*
     private ToggleButton mute;
-    /**
+    *//**
      * the volume button
-     */
-    private SeekBar volume;
+     *//*
+    private SeekBar volume;*/
     /**
      * The update button.
      */
@@ -101,8 +96,8 @@ public class CarRadioChange extends AppCompatActivity {
         radioName = (EditText) findViewById(R.id.radio_change);
         radioChannel = (EditText) findViewById(R.id.channel_change);
 
-        mute = (ToggleButton) findViewById(R.id.mute_button);
-        volume = (SeekBar) findViewById(R.id.volume_set);
+      /*  mute = (ToggleButton) findViewById(R.id.mute_button);
+        volume = (SeekBar) findViewById(R.id.volume_set);*/
 
         update = (Button) findViewById(R.id.radio_update);
         delete = (Button) findViewById(R.id.radio_del);
@@ -144,7 +139,7 @@ public class CarRadioChange extends AppCompatActivity {
             }
         });
 
-        mute.setOnClickListener(new View.OnClickListener() {
+       /* mute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mute.isChecked()) {
@@ -171,7 +166,7 @@ public class CarRadioChange extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
-        });
+        });*/
 
     }
 

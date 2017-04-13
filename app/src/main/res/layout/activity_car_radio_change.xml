@@ -61,7 +61,7 @@
         android:hint="new channel"
         android:inputType="numberDecimal" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/volume_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/volume_text"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true" />-->
 
     <Button
         android:id="@+id/radio_update"

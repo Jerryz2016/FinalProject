@@ -3,6 +3,7 @@ package com.jieli.finalproject;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
@@ -25,15 +26,12 @@ import android.widget.ToggleButton;
 
 /**
  * CST2335 Final Project-Automobile activity
- * <p>
  * The Class CarRadio, is the activity to show a listview of the stored radio names and the settings
  * which retrieved from a database. It deals with DB reading and storing in the backgroud using AsyncTask .
- * <p>
  * Group   3
- *
  * @author Jieli Zhang
  * @version v1.0
- *          Date      2017.04.12
+ * Date      2017.04.12
  */
 public class CarRadio extends AppCompatActivity {
 
@@ -97,6 +95,34 @@ public class CarRadio extends AppCompatActivity {
      */
     private int[] to;
 
+    /**
+     * The SharedPreference file of volume.
+     */
+    private SharedPreferences spVolume;
+
+    /**
+     * The file name.
+     */
+    private static String VOLUMEFILE = "com.jieli.finalproject.carradio";
+
+    /**
+     * Key string of volume.
+     */
+    private static String VOLUME = "volume";
+
+    /**
+     * Key string of mute  .
+     */
+    private static String MUTE = "mute";
+    /**
+     * value of the volume
+     */
+    private String volumeN;
+    /**
+     * value of the mute
+     */
+    private String muteN;
+
 
     /**
      * On create.
@@ -117,6 +143,7 @@ public class CarRadio extends AppCompatActivity {
 
         mute = (ToggleButton) findViewById(R.id.mute_button);
         volume = (SeekBar) findViewById(R.id.volume_set);
+        spVolume = getSharedPreferences(VOLUMEFILE, Context.MODE_PRIVATE);
 
         RadioSet thread = new RadioSet();
         thread.execute();
@@ -251,16 +278,26 @@ public class CarRadio extends AppCompatActivity {
                 });
                 progressBar.setVisibility(View.INVISIBLE);
 
+                volumeN = spVolume.getString(VOLUME, "12");
+                muteN = spVolume.getString(MUTE, "0");
+
+                mute.setChecked(muteN.equals("1"));
+                volume.setProgress(Integer.parseInt(volumeN));
+
                 mute.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if (mute.isChecked()) {
                             Snackbar.make(v, "Radio is muted", Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show();
+                            muteN = "1";
                         } else {
                             Snackbar.make(v, "Radio is on", Snackbar.LENGTH_LONG)
                                     .setAction("Action", null).show();
+                            muteN = "0";
                         }
+
+                        spVolume.edit().putString(MUTE, muteN).commit();
                     }
                 });
 
@@ -269,6 +306,8 @@ public class CarRadio extends AppCompatActivity {
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         Snackbar.make(findViewById(R.id.radio_ok), "Volume: " + String.valueOf(progress), Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
+                        volumeN = String.valueOf(progress);
+                        spVolume.edit().putString(VOLUME, volumeN).commit();
                     }
 
                     @Override

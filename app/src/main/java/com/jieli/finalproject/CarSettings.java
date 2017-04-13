@@ -16,15 +16,12 @@ import android.widget.ListView;
 
 /**
  * CST2335 Final Project-Automobile activity
- * <p>
  * The Class CarSettings, is the main inferface of the Automobile activity, it calls the related
  * other activity to set the Temperature,lights,GPS and radio of the car.
- * <p>
  * Group     3
- *
  * @author Jieli Zhang
  * @version v1.0
- *          Date      2017.04.12
+ * Date      2017.04.12
  */
 public class CarSettings extends AppCompatActivity {
 
@@ -43,7 +40,7 @@ public class CarSettings extends AppCompatActivity {
     private String[] carSettings = {"Temperature", "Radio", "GPS", "Lights"};
 
     /**
-     * The is tablet.
+     * The boolean for identify is tablet or not.
      */
     private Boolean isTablet;  // for to check if a phone or tablet
 
