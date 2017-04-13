@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import me.priyesh.chroma.ChromaDialog;
 import me.priyesh.chroma.ColorMode;
@@ -31,13 +30,14 @@ import static com.jieli.finalproject.LivingDatabaseHelper.KEY_NUMBER;
  * @version v1.3.  Date: Apr 12, 2017
  */
 public class Lamp3 extends AppCompatActivity {
-    ChromaDialog.Builder lamp3Cb;
-    SharedPreferences prefs  ;
-    SharedPreferences.Editor myEditor ;
 
     SQLiteDatabase livingDB = null;
     LivingDatabaseHelper dbHelper;
 
+    SharedPreferences prefs  ;
+    SharedPreferences.Editor myEditor ;
+
+    ChromaDialog.Builder lamp3Cb;
     int lastColor, id3;
     ContentValues newMessage;
     int rid;
@@ -46,7 +46,6 @@ public class Lamp3 extends AppCompatActivity {
     Button  set;
     Button  cancel;
     Button delete;
-    private TextView dialogInfo;
 
     /**
      * callback function by Android.
@@ -55,18 +54,18 @@ public class Lamp3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lamp3);
+        //define the database
         dbHelper = new LivingDatabaseHelper(this);
         livingDB = dbHelper.getWritableDatabase();
-
+        //define ShanredPreferences object
         prefs = getSharedPreferences("livingRoomItems", Context.MODE_PRIVATE);
         myEditor = prefs.edit();
 
         id3=prefs.getInt("lmp3",0);
 
         newMessage = new ContentValues();
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lamp3);
 
         clickedItem = getIntent().getExtras();
         rid = clickedItem.getInt("id");

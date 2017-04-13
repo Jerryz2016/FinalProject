@@ -125,7 +125,7 @@ public class LivingRoomActivity extends AppCompatActivity {
 
         newMessage = new ContentValues();
         item = new ContentValues();
-
+        //add a Lamp1
         Button bnt_lamp1 = (Button) findViewById(R.id.lamp1);
         bnt_lamp1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +136,7 @@ public class LivingRoomActivity extends AppCompatActivity {
                 adapter.changeCursor(cursor2);
             }
         });
-
+        //add a Lamp2
         Button bnt_lamp2 = (Button) findViewById(R.id.lamp2);
         bnt_lamp2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +147,7 @@ public class LivingRoomActivity extends AppCompatActivity {
                 adapter.changeCursor(cursor2);
             }
         });
-
+        //add a Lamp3
         Button bnt_lamp3 = (Button) findViewById(R.id.lamp3);
         bnt_lamp3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,7 +158,7 @@ public class LivingRoomActivity extends AppCompatActivity {
                 adapter.changeCursor(cursor2);
             }
         });
-
+        //add a TV
         Button bnt_tv = (Button) findViewById(R.id.tv);
         bnt_tv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,7 +169,7 @@ public class LivingRoomActivity extends AppCompatActivity {
                 adapter.changeCursor(cursor2);
             }
         });
-
+        //add a Smart Window Blinds
         Button bnt_blinds = (Button) findViewById(R.id.blinds);
         bnt_blinds.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,7 +204,7 @@ public class LivingRoomActivity extends AppCompatActivity {
         {
             Log.i(ACTIVITY_NAME, "Column's name =="  + cursor2.getColumnName(i));
         }
-        //Resources resource = getResources();
+
         //livingRoomItems = getResources().getStringArray(R.array.livingroom_array);
         if (cursor2 != null) {
             from = new String[]{SETCOL};
@@ -222,7 +222,7 @@ public class LivingRoomActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
+               //move curser to the selected item
                 cursor2.moveToPosition(position);
                 // Get the item's ID  from this row in the database.
                 clickedID = cursor2.getInt(cursor2.getColumnIndex(dbItemHelper.KEY_ID));
@@ -454,7 +454,7 @@ public class LivingRoomActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(LivingRoomActivity.this, Lamp3.class);
                         intent.putExtras(bundle); //pass the clicked item Lamp3 to next activity
-                        startActivityForResult(intent, 11); //go to Lamp3 activity to set or delete this lamp3
+                        startActivityForResult(intent, 11); //expecte to receive the result from Lamp3
                         break;
 
                     case "tv":   //setting Television
