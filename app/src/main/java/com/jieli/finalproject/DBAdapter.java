@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import static com.jieli.finalproject.R.id.setting;
+
+//---- This class is to create a DbAdapter for kitchen sub-application
 public class DBAdapter {
 
     private static final String DATABASE_NAME = "DB";
@@ -27,9 +30,9 @@ public class DBAdapter {
     private static final String CREATE_TABLE =
             "create table " + DATABASE_TABLE
                     + "("
-                    + KEY_ROWID   + " integer primary key autoincrement, "
-                    + KEY_TYPE    + " text not null, "
-                    + KEY_NAME    + " text not null, "
+                    + KEY_ROWID + " integer primary key autoincrement, "
+                    + KEY_TYPE + " text not null, "
+                    + KEY_NAME + " text not null, "
                     + KEY_SETTING + " text not null"
                     + ");";
 
@@ -57,7 +60,7 @@ public class DBAdapter {
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
                     + newVersion + ", which will destroy all old data");
-            db.execSQL("DROP TABLE IF EXISTS" + DATABASE_TABLE );
+            db.execSQL("DROP TABLE IF EXISTS" + DATABASE_TABLE);
             onCreate(db);
         }
     }
@@ -70,7 +73,7 @@ public class DBAdapter {
 
     //---closes the database---
     public void close() {
-        if(DBHelper != null) {
+        if (DBHelper != null) {
             DBHelper.close();
         }
     }
@@ -96,9 +99,20 @@ public class DBAdapter {
     }
 
     //---retrieves a particular item---
-    public Cursor getItem(long rowId) throws SQLException {
+   public Cursor getItem(long rowId) throws SQLException {   //---retrieves item by ID---
+
         Cursor mCursor = db.query(true, DATABASE_TABLE, new String[]{KEY_TYPE, KEY_NAME, KEY_SETTING},
                         KEY_ROWID + "=" + rowId, null, null, null, null, null);
+
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+
+    public Cursor getItem(String name) throws SQLException {  //---retrieves item by name---
+        Cursor mCursor = db.query(true, DATABASE_TABLE, new String[]{KEY_TYPE, KEY_NAME, KEY_SETTING},
+                KEY_NAME + " like ?", new String[]{name}, null, null, null, null);
         if (mCursor != null) {
             mCursor.moveToFirst();
         }
@@ -106,11 +120,25 @@ public class DBAdapter {
     }
 
     //---updates an item---
-    public boolean updateItem(long rowId, String setting) {
+    public boolean updateItem(long rowId, String setting) {   //---update item by ID---
         ContentValues args = new ContentValues();
         //args.put(KEY_TYPE, type);
         //args.put(KEY_NAME, name);
         args.put(KEY_SETTING, setting);
         return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+    }
+
+    public boolean updateItem(String name, String setting) {  //---update item by name---
+        ContentValues args = new ContentValues();
+        //args.put(KEY_TYPE, type);
+        //args.put(KEY_NAME, name);
+        args.put(KEY_SETTING, setting);
+        return db.update(DATABASE_TABLE, args, KEY_NAME + " like ?", new String[]{name}) > 0;
+    }
+
+
+    //----drop db------
+    public void drop() {
+        db.execSQL("DROP TABLE IF EXISTS" + DATABASE_TABLE);
     }
 }

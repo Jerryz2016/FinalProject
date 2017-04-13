@@ -54,7 +54,7 @@
             android:layout_weight="1"
             android:background="#FF0800"
             android:drawableTop="@drawable/return_48"
-            android:text="Reset"
+            android:text="@string/kitchen_microwave_button_reset"
             android:textColor="#FFFFFF"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -67,7 +67,7 @@
             android:layout_weight="1"
             android:background="#FF0800"
             android:drawableTop="@drawable/play_48"
-            android:text="Start"
+            android:text="@string/kitchen_microwave_button_start"
             android:textColor="#FFFFFF"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -80,7 +80,7 @@
             android:layout_weight="1"
             android:background="#FF0800"
             android:drawableTop="@drawable/stop_48"
-            android:text="Stop"
+            android:text="@string/kitchen_microwave_button_stop"
             android:textColor="#FFFFFF"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="#FF0800"
-        android:text="Return"
+        android:text="@string/kitchen_return"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"

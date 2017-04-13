@@ -15,6 +15,30 @@
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
 
+
+
+    //----------- Strings for kitchen----------------
+    <string name="help_kitchen_title">智能厨房帮助说明</string>
+    <string name="help_kitchen_version">智能厨房 版本 1.0, by Group3:Chao Gu\n</string>
+    <string name="help_kitchen_info">
+        1, 在主页面导航栏内，点击智能厨房按钮，进入智能厨房控制界面，界面中罗列所有可控制的厨房设备.\n
+        2, 点击任一设备，将显示该设备详细控制信息。点击“增加”按钮，可增加厨房设备。点击“删除”按钮，可删除列表中的设备.\n
+        3, 依据任一设备的详细控制界面窗口，可对该设备进行设置.
+    </string>
+
+    <string name="kitche_return">返回</string>
+    <string name="kitchen_setting">设置</string>
+    <string name="kitchen_microwave_button_reset">重置</string>
+    <string name="kitchen_microwave_button_start">开始</string>
+    <string name="kitchen_microwave_button_stop">停止</string>
+    <string name="kitchen_fridge_text_type">类型</string>
+    <string name="kitchen_fridge_text_name">名称</string>
+    <string name="kitchen_fridge_text_temp">温度</string>
+    <string name="kitchen_kitchen_light_text_status">状态</string>
+    <string name="kitchen_kitchen_light_button_on">开启</string>
+    <string name="kitchen_kitchen_light_button_off">关闭</string>
+
+
     <string name="LivingRoom">客厅</string>
     <string name="ControlPanel">控制面版</string>
     <string name="MoreAppliances">添加</string>
