@@ -19,7 +19,7 @@
             android:id="@+id/houseSettingHeaderTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#AA08FF"
+            android:background="#D9F72F"
             android:text="Smart House Setting"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -36,17 +36,18 @@
             android:id="@+id/houseSettingButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#D9F72F"
             android:text="Return"
-            android:textStyle="bold"
             android:textColor="#000000"
-            android:background="#AA08FF"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/houseSettingText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+
+
 
     </LinearLayout>
+
+
 
 
 

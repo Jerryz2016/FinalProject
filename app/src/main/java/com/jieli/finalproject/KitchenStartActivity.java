@@ -61,6 +61,7 @@ public class KitchenStartActivity extends AppCompatActivity {
         isTablet = (findViewById(R.id.detail) != null);
         new createDB().execute("");
 
+
         button_List = (ListView) findViewById(R.id.list_item);
         addButton = (Button) findViewById(R.id.buttonAdd);
         deleteButton = (Button) findViewById(R.id.buttonDelete);
@@ -152,6 +153,7 @@ public class KitchenStartActivity extends AppCompatActivity {
         //---- add the adapter1 which holds the list of appliances that have been added into the ListView
         //---- when a item is clicked, go to the specific activity or fragment
         button_List.setAdapter(adapter1);
+
         button_List.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -281,7 +283,8 @@ public class KitchenStartActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
+            adapter = new ArrayAdapter<String>(KitchenStartActivity.this, android.R.layout.simple_list_item_1, list1);
+            button_List.setAdapter(adapter);
         }
     }
 

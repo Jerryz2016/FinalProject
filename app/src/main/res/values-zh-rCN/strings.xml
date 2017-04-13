@@ -38,4 +38,12 @@
     <string name="kitchen_kitchen_light_button_on">开启</string>
     <string name="kitchen_kitchen_light_button_off">关闭</string>
 
+
+    <string name="LivingRoom">客厅</string>
+    <string name="ControlPanel">控制面版</string>
+    <string name="MoreAppliances">添加</string>
+    <string name="DataBase">数据库</string>
+    <string name="Exit">退出</string>
+
+
 </resources>
