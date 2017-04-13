@@ -6,7 +6,6 @@
     <item
         android:id="@+id/action_one"
         android:icon="@drawable/living"
-
         android:orderInCategory="101"
         android:title="@string/main_menu1"
         app:showAsAction="always" />

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jieli.finalproject.Lamp3">
+
+    <TextView
+        android:id="@+id/lamp3Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_light"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Lamp3 Setting"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:src="@drawable/lamp3"
+        android:layout_width="500dp"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lamp3"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="50dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/imageLamp3" />
+
+
+    <Button
+        android:id="@+id/lamp3_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:text="Set"
+        android:textColor="@android:color/background_light"
+        android:layout_below="@+id/imageLamp3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp" />
+
+    <Button
+        android:id="@+id/lamp3_del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_purple"
+        android:textColor="@android:color/background_light"
+        android:text="Delete"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/lamp3_setting"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/lamp3_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:layout_marginStart="82dp"
+        android:layout_alignBaseline="@+id/lamp3_setting"
+        android:layout_alignBottom="@+id/lamp3_setting"
+        android:layout_toEndOf="@+id/lamp3_setting"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/background_light"/>
+
+</RelativeLayout>
