@@ -52,7 +52,7 @@ public class MicrowaveActivity extends AppCompatActivity {
         stop.setVisibility(View.INVISIBLE);
 
 
-
+        //---read the value from minute picker and set it into the minute---
         minutePicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener(){
             @Override
             public void onValueChange (NumberPicker picker, int oldVal, int newVal){
@@ -65,6 +65,7 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
+        //---read the value from second picker and set it into the second---
         secondPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener(){
             @Override
             public void onValueChange (NumberPicker picker, int oldVal, int newVal){
@@ -77,6 +78,7 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
+        //---when start button is clicked, disable all other button, make the clock start to count down---
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,6 +103,7 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
+        //---when reset button is clicked, disable all other button except start button, reset the clock---
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,6 +123,7 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
+        //---when stop button is clicked, disable all other button except start button, reset the clock---
         stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
