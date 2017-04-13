@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="#00AAFF"
-        android:text="Living Room!"
+        android:text="@string/LivingRoom"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="#00AAFF"
-        android:text="Control Panel"
+        android:text="@string/ControlPanel"
         android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -40,7 +40,8 @@
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="250dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp" />
 
     <TextView
         android:id="@+id/caption_for_fragment1"
@@ -48,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="#00AAFF"
-        android:text="More Appliances"
+        android:text="@string/MoreAppliances"
         android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -115,7 +116,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="5dp"
             android:background="#00AAFF"
-            android:text="DataBase"
+            android:text="@string/DataBase"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
 
@@ -136,21 +137,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="#00AAFF"
-        android:text="Exit"
+        android:text="@string/Exit"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
+        android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"/>
-
+        android:layout_alignParentBottom="true"
+        android:background="#00AAFF"
+        android:layout_weight="0.36" />
 
     </LinearLayout>
 
