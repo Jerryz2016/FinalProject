@@ -283,8 +283,7 @@ public class KitchenStartActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            adapter = new ArrayAdapter<String>(KitchenStartActivity.this, android.R.layout.simple_list_item_1, list1);
-            button_List.setAdapter(adapter);
+            
         }
     }
 
