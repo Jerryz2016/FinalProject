@@ -9,18 +9,20 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-
 
 
 public class KitchenStartActivity extends AppCompatActivity {
@@ -40,14 +42,16 @@ public class KitchenStartActivity extends AppCompatActivity {
     final String PERCENT = "\u0025";
     AlertDialog.Builder alertDialogToAdd, alertDialogToDel;
 
-    //----list1 is to record the appliances that have beed added into the control panel list
+    //----list1 is to record the appliances that have been added into the control panel list
     //----list2 is to record the appliances that act as options for user
     List<String> list1 = new ArrayList<>();
     List<String> list2 = new ArrayList<>();
     SharedPreferences pref1, pref2;
     SharedPreferences.Editor editor1, editor2;
-    Set<String> set1,set2;
+    Set<String> set1, set2;
 
+//    FileOutputStream fos;
+//    FileInputStream fis;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,22 +75,27 @@ public class KitchenStartActivity extends AppCompatActivity {
 
         //--- initial the two lists----
         set1 = pref1.getStringSet("list1", new HashSet<String>());
+        Log.i("set1 start value", "" + set1);
         set2 = pref2.getStringSet("list2", new HashSet<String>());
-
+        Log.i("set2 start value", "" + set2);
 
         //--- the first time when activity come to on-create, the two lists should be null, so initial the two adapters-----
         if (set1.isEmpty() && set2.isEmpty()) {
+            set1.clear();
             set1.add("Microwave");
             set1.add("Fridge");
             set1.add("Main Light");
             list1.addAll(set1);
             adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list1);
+            Log.i("set1 value", "" + set1);
 
+            set2.clear();
             set2.add("Fridge (Samsung)");
             set2.add("Freezer (Samsung)");
             set2.add("Main Ceiling Light");
             list2.addAll(set2);
             adapter2 = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice, list2);
+            Log.i("set2 value", "" + set2);
         } else {
             list1.addAll(set1);
             adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list1);
@@ -108,9 +117,12 @@ public class KitchenStartActivity extends AppCompatActivity {
                 adapter1.add(adapter2.getItem(position));
                 adapter1.notifyDataSetChanged();
                 set1.add(adapter2.getItem(position));
+                Log.i("set1 value", "" + set1);
 
-                adapter2.remove(adapter2.getItem(position));
-                set2.remove(adapter2.getItem(position).toString());
+                String s = adapter2.getItem(position);
+                adapter2.remove(s);
+                set2.remove(s);
+                Log.i("set2 value", "" + set2);
             }
         });
 
@@ -126,10 +138,14 @@ public class KitchenStartActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int position) {
                 adapter2.add(adapter1.getItem(position));
                 set2.add(adapter1.getItem(position));
+                adapter2.notifyDataSetChanged();
+                Log.i("set2 value", "" + set2);
 
-                adapter1.remove(adapter1.getItem(position));
+                String s = adapter1.getItem(position);
+                adapter1.remove(s);
+                set1.remove(s);
                 adapter1.notifyDataSetChanged();
-                set1.remove(adapter1.getItem(position));
+                Log.i("set1 value", "" + set1);
             }
         });
 
@@ -214,12 +230,19 @@ public class KitchenStartActivity extends AppCompatActivity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                editor1.clear();
+                editor2.clear();
+
                 editor1.putStringSet("list1", set1);
+                Log.i("set1 value", "" + set1);
                 editor1.commit();
                 set1.clear();
+
                 editor2.putStringSet("list2", set2);
+                Log.i("set2 value", "" + set2);
                 editor2.commit();
                 set2.clear();
+
                 finish();
             }
         });
