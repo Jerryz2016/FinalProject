@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import android.support.design.widget.Snackbar;
-
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,9 +13,6 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import android.widget.EditText;
-
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +20,7 @@ import static com.jieli.finalproject.R.menu.main_toolbar_menu;
 
 public class MainActivity extends AppCompatActivity {
     Context ctx;
-
+    int item = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ctx = this;
+
     }
 
     public boolean onCreateOptionsMenu(Menu m) {
@@ -42,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem mi) {     //item clicked
+        int item = mi.getItemId();
 
         switch (mi.getItemId()) {
             case R.id.action_one:             //option1 clicked
@@ -86,9 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.help_living:
-                Log.d("Toolbar", "Help selected");
-                Toast toast6 = Toast.makeText(this, "Replace with Instruction for Smart Living Room Version 1.0, by Group3:Jie Wang", Toast.LENGTH_LONG);
-                toast6.show();
+//                Log.d("Toolbar", "Help selected");
+//                Toast toast6 = Toast.makeText(this, "Replace with Instruction for Smart Living Room Version 1.0, by Group3:Jie Wang", Toast.LENGTH_LONG);
+//                toast6.show();
+                dialog(R.string.help_living_title, R.string.help_living_version, R.string.help_living_room_info);
                 break;
             case R.id.help_kitchen:
                 Log.d("Toolbar", "Help selected");
@@ -110,16 +107,18 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
     public void dialog(int title, int version, int helpinfo) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
         builder.setTitle(title);
+
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.help_dialog_layout, null);
         builder.setView(view);
+
         TextView versionInfo = (TextView) view.findViewById(R.id.version_info);
         versionInfo.setText(version);
+
         TextView helpInfo = (TextView) view.findViewById(R.id.help_info);
         helpInfo.setText(helpinfo);
 

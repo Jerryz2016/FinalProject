@@ -6,9 +6,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * Created by Jerry on 04-Apr-17.
+ * The Class LivingItemsDbHelper extends SQLiteOpenHelper. It is used to
+ * create a database for saving the items in the living room
+ * @author   Jie Wang
+ * @version v1.3.  Date: Apr 12, 2017
  */
-
 public class LivingItemsDbHelper extends SQLiteOpenHelper {
     private static final int VERSION_NUM = 1;
     private static final String ACTIVITY_NAME = "LivingItemsDatabase";
@@ -26,6 +28,7 @@ public class LivingItemsDbHelper extends SQLiteOpenHelper {
         super(ctx, DATABASE_NAME, null, VERSION_NUM);
     }
 
+    // function of onCreate to use to create a table in the database
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_RADIO_TABLE);
@@ -33,7 +36,11 @@ public class LivingItemsDbHelper extends SQLiteOpenHelper {
         Log.i(" " + ACTIVITY_NAME, "Calling onCreate() ");
 
     }
-
+    /** function of onUpgrade to use to update database
+     * *@param db: SQLiteDatabase
+     * *@param oldVersion: int
+     * *@param newVersion: int
+     * */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
@@ -41,7 +48,11 @@ public class LivingItemsDbHelper extends SQLiteOpenHelper {
 
         Log.i(" " + ACTIVITY_NAME, "Calling OnUpgade(), oldVersion = " + oldVersion + ", newVersion = " + newVersion);
     }
-
+    /** function of onUpgrade to downgrade database version
+     * * *@param db: SQLiteDatabase
+     * *@param oldVersion: int
+     * *@param newVersion: int
+     * */
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);

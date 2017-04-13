@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * Created by jie on 30/03/17.
+ * The Class LivingDatabaseHelper extends SQLiteOpenHelper. It is used to
+ * create a database for saving the items in the living room
+ * @author   Jie Wang
+ * @version v1.3.  Date: Apr 12, 2017
  */
 
 public class LivingDatabaseHelper extends SQLiteOpenHelper {
@@ -23,6 +26,9 @@ public class LivingDatabaseHelper extends SQLiteOpenHelper {
         super(ctx, DATABASE_NAME, null, VERSION_NUM);
     }
 
+    /** function of onCreate to use to create a table in the database
+     * *@param db: SQLiteDatabase
+     * */
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -34,7 +40,11 @@ public class LivingDatabaseHelper extends SQLiteOpenHelper {
 
         Log.i("LivingDatabaseHelper","Calling onCreate" );
     }
-
+    /** function of onUpgrade to use to update database
+     * *@param db: SQLiteDatabase
+     * *@param oldVersion: int
+     * *@param newVersion: int
+     * */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVer, int newVer) {
 
@@ -44,7 +54,7 @@ public class LivingDatabaseHelper extends SQLiteOpenHelper {
 
         Log.i(ACTIVITY_NAME, "Calling onUpgrade():  oldVer= " + oldVer + "newVer= " + newVer);
     }
-
+    // function of onOen to open database
     @Override
     public void onOpen(SQLiteDatabase db){
         Log.i(ACTIVITY_NAME, "Calling onOpne()");

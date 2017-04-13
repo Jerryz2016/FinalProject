@@ -13,6 +13,13 @@
     <string name="garageLight">Garage Light</string>
     <string name="house_Save">House Save</string>
 
+    <string name="LivingRoom">Living Room!</string>
+    <string name="ControlPanel">Control Panel</string>
+    <string name="MoreAppliances">More Appliances Room</string>
+    <string name="DataBase">DataBase</string>
+    <string name="Exit">Exit</string>
+
+
 
 
     <string name="ok">OK</string>
@@ -37,8 +44,8 @@
         <item> Lamp3</item>
         <item> Television</item>
         <item> Window Blinds</item>
-
     </string-array>
+
 
 
     <!--
@@ -55,8 +62,18 @@
           respectively.\n
         3,Following the prompt on each screen,you will set all the settings of the car.
     </string>
+    <string name="help_living_title">Car Help</string>
+    <string name="help_living_version">Help for Living Room Version 1.0, by Group3:Jie Wang\n</string>
+    <string name="help_living_room_info">
+        1.Click the icon of LivingRoom on the Toolbar, Living Room screen will be displayed.\n
+        2.You can add/delete any of these items, lamp1,lamp2,lamp3,tv and smart window blinds.\n
+        3.Click any of the listed item which you want to set,it will display you the setting screen
+          respectively.\n
+        4.Following the prompt on each screen,you will set all the settings of the living room.
 
-    <string name="button_negative">NoNoNoNo</string>
-    <string name="button_positive">YesYes</string>
+    </string>
+
+    <string name="button_negative">Cancel</string>
+    <string name="button_positive">OK</string>
 
 </resources>

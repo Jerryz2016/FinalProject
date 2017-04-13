@@ -43,7 +43,7 @@
         android:layout_marginTop="46dp" />
 
     <Button
-        android:id="@+id/radio_del"
+        android:id="@+id/lamp3_del"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_purple"
@@ -54,10 +54,10 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:id="@+id/radio_cancel"
+        android:id="@+id/lamp3_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancel"
+        android:text="Exit"
         android:layout_marginStart="82dp"
         android:layout_alignBaseline="@+id/lamp3_setting"
         android:layout_alignBottom="@+id/lamp3_setting"

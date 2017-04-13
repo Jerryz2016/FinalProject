@@ -14,4 +14,12 @@
 
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
+
+    <string name="LivingRoom">客厅</string>
+    <string name="ControlPanel">控制面版</string>
+    <string name="MoreAppliances">添加</string>
+    <string name="DataBase">数据库</string>
+    <string name="Exit">退出</string>
+
+
 </resources>
