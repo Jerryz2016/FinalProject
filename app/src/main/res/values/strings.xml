@@ -59,6 +59,9 @@
         3,Following the prompt on each screen,you will set all the settings of the car.
     </string>
 
+    <string name="help_living_title">Living Room Help</string>
+
+
 
     //----------- Strings for kitchen----------------
     <string name="help_kitchen_title">Smart Kitchen Help</string>
@@ -90,6 +93,7 @@
     <string name="kitchen_kitchen_light_button_off">OFF</string>
 
     <string name="help_living_title">Car Help</string>
+
     <string name="help_living_version">Help for Living Room Version 1.0, by Group3:Jie Wang\n</string>
     <string name="help_living_room_info">
         1.Click the icon of LivingRoom on the Toolbar, Living Room screen will be displayed.\n
