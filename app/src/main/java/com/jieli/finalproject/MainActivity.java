@@ -5,9 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import android.support.design.widget.Snackbar;
-
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,17 +13,33 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import android.widget.EditText;
-
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.jieli.finalproject.R.menu.main_toolbar_menu;
 
+/**
+ * CST2335 Final Project
+ * <p>
+ * The Class MainActivity.java, is the main interface of the Smart Home App with a Toolbar navigation to Living room, Kitchen, House and \
+ * Automobile activities.
+ * <p>
+ * Group   3
+ *
+ * @author Group3
+ * @version v1.0
+ *          Date    2017.04.12
+ */
 public class MainActivity extends AppCompatActivity {
+
+    /** The Context ctx. */
     Context ctx;
 
+    /**
+     * override Oncreate.
+     *
+     * @param savedInstanceState the saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +49,23 @@ public class MainActivity extends AppCompatActivity {
         ctx = this;
     }
 
+    /**
+     * On create options menu.
+     *
+     * @param m , the toolbar menu
+     * @return true, if successful
+     */
     public boolean onCreateOptionsMenu(Menu m) {
         getMenuInflater().inflate(main_toolbar_menu, m);
         return true;
     }
 
+    /**
+     * On options item selected.
+     *
+     * @param mi the menu items
+     * @return true, if successful
+     */
     public boolean onOptionsItemSelected(MenuItem mi) {     //item clicked
 
         switch (mi.getItemId()) {
@@ -101,9 +126,9 @@ public class MainActivity extends AppCompatActivity {
                 toast8.show();
                 break;
             case R.id.help_car:
-//                Log.d("Toolbar", "Help selected");
-//                Toast toast9 = Toast.makeText(this, "Instruction for Smart Car Version 1.0, by Group3:Jieli Zhang", Toast.LENGTH_LONG);
-//                toast9.show();
+                //                Log.d("Toolbar", "Help selected");
+                //                Toast toast9 = Toast.makeText(this, "Instruction for Smart Car Version 1.0, by Group3:Jieli Zhang", Toast.LENGTH_LONG);
+                //                toast9.show();
                 dialog(R.string.help_car_title, R.string.help_car_version, R.string.help_car_info);
                 break;
         }
@@ -111,6 +136,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Dialog.
+     *
+     * @param title the title of the activity
+     * @param version the version of the activity
+     * @param helpinfo the helpinfo of the activity
+     */
     public void dialog(int title, int version, int helpinfo) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
@@ -123,21 +155,21 @@ public class MainActivity extends AppCompatActivity {
         TextView helpInfo = (TextView) view.findViewById(R.id.help_info);
         helpInfo.setText(helpinfo);
 
-// Add the buttons
+        // Add the buttons
         builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button
             }
         });
- /*       builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+        /*       builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 //do nothing
             }
         });   */
         // Create the AlertDialog
         AlertDialog dialog = builder.create();
-        dialog.show();
-    }
+		dialog.show();
+	}
 
 }
 
