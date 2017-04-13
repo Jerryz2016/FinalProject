@@ -85,9 +85,10 @@ public class MainActivity extends AppCompatActivity {
                 toast6.show();
                 break;
             case R.id.help_kitchen:
-                Log.d("Toolbar", "Help selected");
-                Toast toast7 = Toast.makeText(this, "Replace with Instruction for Smart Kitchen Version 1.0, by Group3: Chao Gu", Toast.LENGTH_LONG);
-                toast7.show();
+//                Log.d("Toolbar", "Help selected");
+//                Toast toast7 = Toast.makeText(this, "Replace with Instruction for Smart Kitchen Version 1.0, by Group3: Chao Gu", Toast.LENGTH_LONG);
+//                toast7.show();
+                dialog(R.string.help_kitchen_title, R.string.help_kitchen_version, R.string.help_kitchen_info);
                 break;
             case R.id.help_house:
                 Log.d("Toolbar", "Help selected");

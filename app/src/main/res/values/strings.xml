@@ -14,11 +14,7 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
 
-    <string-array name="button_array">
-        <item>microwave</item>
-        <item>fridge</item>
-        <item>main light</item>
-    </string-array>
+
 
     <string-array name="houseSettingButton_array">
         <item>Garage</item>
@@ -44,5 +40,34 @@
         2,Click any of the listed item which you want to set,it will display you the setting screen
           respectively.\n
         3,Following the prompt on each screen,you will set all the settings of the car.
-    </string>>
+    </string>
+
+    //----------- Strings for kitchen----------------
+    <string name="help_kitchen_title">Smart Kitchen Help</string>
+    <string name="help_kitchen_version">Help for Smart Kitchen Control Version 1.0, by Group3:Chao Gu\n</string>
+    <string name="help_kitchen_info">
+        1,Click the icon of SmartKitchen on the Toolbar, Smart Kitchen Control Panel screen will be displayed with a list
+          of Appliances.\n
+        2,Click any of the appliances which you want to set,it will display you the setting screen
+          respectively. As well, click the add button will allow you to add more appliances, the delete button allows you
+          to remove a appliance from the list.\n
+        3,Following the prompt on each screen,you will set all the settings of the specific appliance.
+    </string>
+
+    <string name="kitchen_return">Return</string>
+    <string name="kitchen_setting">Setting</string>
+
+    <string name="kitchen_microwave_button_reset">Reset</string>
+    <string name="kitchen_microwave_button_start">Start</string>
+    <string name="kitchen_microwave_button_stop">Stop</string>
+
+    <string name="kitchen_fridge_text_type">Type</string>
+    <string name="kitchen_fridge_text_name">Name</string>
+    <string name="kitchen_fridge_text_temp">Temperature</string>
+
+    <string name="kitchen_kitchen_light_text_type">Type</string>
+    <string name="kitchen_kitchen_light_text_name">Name</string>
+    <string name="kitchen_kitchen_light_text_status">Status</string>
+    <string name="kitchen_kitchen_light_button_on">ON</string>
+    <string name="kitchen_kitchen_light_button_off">OFF</string>
 </resources>

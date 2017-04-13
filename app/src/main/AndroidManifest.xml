@@ -45,7 +45,7 @@
 
         <activity android:name=".CarTemperature" />
         <activity android:name=".LivingRoomActivity"></activity>
-        <activity android:name=".KitchenStartActivity" />
+        <activity android:name=".KitchenLightActivity" />
         <activity android:name=".CarLights"></activity>
         <activity
             android:name=".CarRadio"
