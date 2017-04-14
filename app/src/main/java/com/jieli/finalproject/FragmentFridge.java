@@ -1,7 +1,14 @@
+/**
+ * File name: 	FragmentFridge.java
+ * Author:  	Group3 Chao Gu
+ * Course: 		CST2335 – Graphical Interface Programming
+ * Project: 	Final
+ * Date: 		April 14, 2017
+ * Professor: 	ERIC TORUNSKI
+ * Purpose: 	To create a fridge control panel.
+ */
 package com.jieli.finalproject;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -12,10 +19,16 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
-import static android.app.Activity.RESULT_OK;
-
-
+/**
+ * The FragmentFridge Class is to create a control panel of fridge.
+ * A number picker is to allow user to set the temperature.
+ * Click on setting button, the temperature will be set as the same as the number of number picker
+ *
+ * @author Group3 Chao Gu
+ * @version v1.0.
+ */
 public class FragmentFridge extends Fragment {
+    /* ATTRIBUTES	-----------------------------------------------------	*/
     TextView typeText, nameText, temperatureText;
     NumberPicker temperaturePicker;
     Button setting, buttonReturn;
@@ -23,7 +36,22 @@ public class FragmentFridge extends Fragment {
     Bundle bundle;
     final String DEGREE = "\u00b0";
     View root;
+    KitchenStartActivity start = null;
+    /* CONSTRUCTORS	-----------------------------------------------------	*/
+    public FragmentFridge(){
 
+    }
+
+    public FragmentFridge(KitchenStartActivity k){
+        start = k;
+    }
+    /**
+     * To create a visible view for FragmentFridge, initialize the attributes and create some methods
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,13 +64,13 @@ public class FragmentFridge extends Fragment {
         setting = (Button) root.findViewById(R.id.setting);
         buttonReturn = (Button) root.findViewById(R.id.button_return);
 
-        //---set the picker with negative values, max value and min value---
-        String[] s = {"-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6",
+
+        String[] s = {"-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6",  //---set the picker with negative values, max value and min value---
                 "-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3", "4", "5"};
         temperaturePicker.setMaxValue(20);
         temperaturePicker.setMinValue(0);
         temperaturePicker.setDisplayedValues(s);
-        temperaturePicker.setValue(0);
+        temperaturePicker.setValue(15);
 
 
         bundle = getArguments();
@@ -51,35 +79,24 @@ public class FragmentFridge extends Fragment {
         nameText.setText(bundle.getString("name"));
         temperatureText.setText(bundle.getString("setting") + DEGREE);
 
-        //---read the value from picker---
+
         temperaturePicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {      //---read the value from picker---
                 temperature = newVal - 15;
             }
         });
 
-        //---when setting button is clicked, set the value and show a piece of information to user---
+
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {        //---when setting button is clicked, set the value and show a piece of information to user---
                 temperatureText.setText(String.valueOf(temperature) + DEGREE);
                 Snackbar.make(v, "Set temperature to " + String.valueOf(temperature) + DEGREE, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                start.updateDB(nameText.getText().toString(), String.valueOf(temperature));
             }
         });
 
-        //---when return button is clicked, transfer the relative values back to the calling activity and update the DB---
-        buttonReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent backIntent = new Intent();
-                backIntent.putExtra("position", position);
-                backIntent.putExtra("setting", String.valueOf(temperature));
-                backIntent.putExtra("name", nameText.getText().toString());
-                getActivity().setResult(RESULT_OK, backIntent);
-                getActivity().finish();
-            }
-        });
         return root;
     }
 }
