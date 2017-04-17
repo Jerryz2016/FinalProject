@@ -169,7 +169,7 @@ public class KitchenStartActivity extends AppCompatActivity {
                 if (button_List.getItemAtPosition(position).toString().equals("Microwave")) {
                     if (isTablet) {
                         fragmentMicrowave = new FragmentMicrowave();
-                        getSupportFragmentManager().beginTransaction().replace(R.id.detail, fragmentMicrowave).commit();
+                        getFragmentManager().beginTransaction().replace(R.id.detail, fragmentMicrowave).commit();
                     } else {
                         Intent intent = new Intent(getApplicationContext(), MicrowaveActivity.class);
                         startActivity(intent);
@@ -184,7 +184,7 @@ public class KitchenStartActivity extends AppCompatActivity {
                         bundle.putString("name", c.getString(c.getColumnIndex("name")));
                         bundle.putString("setting", c.getString(c.getColumnIndex("setting")));
                         fragmentFridge.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().replace(R.id.detail, fragmentFridge).commit();
+                        getFragmentManager().beginTransaction().replace(R.id.detail, fragmentFridge).commit();
                     } else {
                         Cursor c = dbAdapter.getItem(button_List.getItemAtPosition(position).toString());
                         Intent intent = new Intent(getApplicationContext(), FridgeActivity.class);
