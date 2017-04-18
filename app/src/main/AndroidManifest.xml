@@ -38,6 +38,7 @@
         <activity android:name=".KitchenStartActivity" />
         <activity android:name=".MicrowaveActivity" />
         <activity android:name=".FridgeActivity" />
+        <activity android:name=".KitchenLightActivity" />
 
         <activity android:name=".HouseSettingStartActivity" />
 
