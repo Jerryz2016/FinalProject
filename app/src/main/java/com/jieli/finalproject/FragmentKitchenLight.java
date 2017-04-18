@@ -1,8 +1,15 @@
+/**
+ * File name: 	FragmentKitchenLight.java
+ * Author:  	Group3 Chao Gu
+ * Course: 		CST2335 – Graphical Interface Programming
+ * Project: 	Final
+ * Date: 		April 14, 2017
+ * Professor: 	ERIC TORUNSKI
+ * Purpose: 	To create a kitchen light control panel.
+ */
 package com.jieli.finalproject;
 
-import android.app.Activity;
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
@@ -13,10 +20,17 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import static android.app.Activity.RESULT_OK;
-
+/**
+ * The FragmentKitchenLight Class is to create a control panel of kitchen light.
+ * A number picker is to allow user to set the dimmable.
+ * Click on setting button, the dimmable will be set as the same as the number of number picker
+ *
+ * @author Group3 Chao Gu
+ * @version v1.0.
+ */
 
 public class FragmentKitchenLight extends Fragment {
+    /* ATTRIBUTES	-----------------------------------------------------	*/
     TextView typeText, nameText, statusText;
     SeekBar seekBar;
     Button setting, buttonReturn, on, off;
@@ -25,7 +39,23 @@ public class FragmentKitchenLight extends Fragment {
     final String PERCENT = "\u0025";
     ImageView image;
     View root;
+    KitchenStartActivity start = null;
+    /* CONSTRUCTORS	-----------------------------------------------------	*/
+    public FragmentKitchenLight(){
 
+    }
+
+    public FragmentKitchenLight(KitchenStartActivity k){
+        start = k;
+    }
+
+    /**
+     * To create a visible view for FragmentKitchenLight, initialize the attributes and create some methods
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_kitchenlight, null);
@@ -48,8 +78,8 @@ public class FragmentKitchenLight extends Fragment {
         typeText.setText(bundle.getString("type"));
         nameText.setText(bundle.getString("name"));
 
-        //---negative value means the light is turned off, so the negative value should be modified---
-        if (Integer.valueOf(bundle.getString("setting")) < 0) {
+
+        if (Integer.valueOf(bundle.getString("setting")) < 0) {   //---negative value means the light is turned off, so the negative value should be modified
             statusText.setText(bundle.getString("setting").replace("-", "") + PERCENT);
             seekBar.setProgress(-Integer.valueOf(bundle.getString("setting")));
             image.setImageAlpha(-Integer.valueOf(bundle.getString("setting"))*2);
@@ -64,8 +94,9 @@ public class FragmentKitchenLight extends Fragment {
             off.setVisibility(View.INVISIBLE);
         }
 
-        //---when user slides the seekbar, read the value and set it into TextView, also use it to set the transparent value of the image---
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {//--- when user slides the seekbar, read the value and set it into TextView,
+                                                                                  //--- also use it to set the transparent value of the image---
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 // TODO Auto-generated method stub
@@ -87,8 +118,8 @@ public class FragmentKitchenLight extends Fragment {
             }
         });
 
-        //---when on button is clicked, make on button invisible, and the off button visible---
-        on.setOnClickListener(new View.OnClickListener() {
+
+        on.setOnClickListener(new View.OnClickListener() {  //---when on button is clicked, make on button invisible, and the off button visible---
             @Override
             public void onClick(View v) {
                 on.setVisibility(View.INVISIBLE);
@@ -96,8 +127,8 @@ public class FragmentKitchenLight extends Fragment {
             }
         });
 
-        //---when off button is clicked, make off button invisible, and the on button visible---
-        off.setOnClickListener(new View.OnClickListener() {
+
+        off.setOnClickListener(new View.OnClickListener() {  //---when off button is clicked, make off button invisible, and the on button visible---
             @Override
             public void onClick(View v) {
                 off.setVisibility(View.INVISIBLE);
@@ -105,36 +136,20 @@ public class FragmentKitchenLight extends Fragment {
             }
         });
 
-        //---when setting button is clicked, set the value and show a piece of information to user---
-        setting.setOnClickListener(new View.OnClickListener() {
+
+        setting.setOnClickListener(new View.OnClickListener() { //---when setting button is clicked, set the value and show a piece of information to user---
             @Override
             public void onClick(View v) {
                 Snackbar.make(v, "Set dimmable to " + String.valueOf(dimmable) + PERCENT, Snackbar.LENGTH_LONG).setAction("Action", null).show();
-            }
-        });
-
-        //---when return button is clicked, transfer the relative values back to the calling activity and update the DB---
-        buttonReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 if (on.getVisibility() == View.VISIBLE) {
-                    Intent backIntent = new Intent();
-                    backIntent.putExtra("position", position);
-                    backIntent.putExtra("setting", String.valueOf(dimmable));
-                    backIntent.putExtra("name", nameText.getText().toString());
-                    getActivity().setResult(RESULT_OK, backIntent);
-                    getActivity().finish();
+                    start.updateDB(nameText.getText().toString(), String.valueOf(dimmable));
                 }else{
-                    Intent backIntent = new Intent();
-                    backIntent.putExtra("position", position);
-                    backIntent.putExtra("setting", String.valueOf(-dimmable));
-                    backIntent.putExtra("name", nameText.getText().toString());
-                    getActivity().setResult(RESULT_OK, backIntent);
-                    getActivity().finish();
+                    start.updateDB(nameText.getText().toString(), String.valueOf(-dimmable));
                 }
-
             }
         });
+
+
         return root;
     }
 }

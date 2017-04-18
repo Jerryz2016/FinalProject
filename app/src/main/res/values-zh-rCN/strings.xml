@@ -28,8 +28,10 @@
         3, 依据任一设备的详细控制界面窗口，可对该设备进行设置.
     </string>
 
-    <string name="kitche_return">返回</string>
+    <string name="kitchen_return">返回</string>
     <string name="kitchen_setting">设置</string>
+    <string name="kitchen_start_add">增加</string>
+    <string name="kitchen_start_delete">删除</string>
     <string name="kitchen_microwave_button_reset">重置</string>
     <string name="kitchen_microwave_button_start">开始</string>
     <string name="kitchen_microwave_button_stop">停止</string>

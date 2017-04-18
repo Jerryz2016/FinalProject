@@ -80,6 +80,9 @@
     <string name="kitchen_return">Return</string>
     <string name="kitchen_setting">Setting</string>
 
+    <string name="kitchen_start_add">ADD</string>
+    <string name="kitchen_start_delete">DELETE</string>
+
     <string name="kitchen_microwave_button_reset">Reset</string>
     <string name="kitchen_microwave_button_start">Start</string>
     <string name="kitchen_microwave_button_stop">Stop</string>
