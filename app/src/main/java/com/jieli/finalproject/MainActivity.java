@@ -117,15 +117,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.help_living:
-//                Log.d("Toolbar", "Help selected");
-//                Toast toast6 = Toast.makeText(this, "Replace with Instruction for Smart Living Room Version 1.0, by Group3:Jie Wang", Toast.LENGTH_LONG);
-//                toast6.show();
                 dialog(R.string.help_living_title, R.string.help_living_version, R.string.help_living_room_info);
                 break;
             case R.id.help_kitchen:
-//                Log.d("Toolbar", "Help selected");
-//                Toast toast7 = Toast.makeText(this, "Replace with Instruction for Smart Kitchen Version 1.0, by Group3: Chao Gu", Toast.LENGTH_LONG);
-//                toast7.show();
                 dialog(R.string.help_kitchen_title, R.string.help_kitchen_version, R.string.help_kitchen_info);
                 break;
             case R.id.help_house:
@@ -134,9 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 toast8.show();
                 break;
             case R.id.help_car:
-                //                Log.d("Toolbar", "Help selected");
-                //                Toast toast9 = Toast.makeText(this, "Instruction for Smart Car Version 1.0, by Group3:Jieli Zhang", Toast.LENGTH_LONG);
-                //                toast9.show();
                 dialog(R.string.help_car_title, R.string.help_car_version, R.string.help_car_info);
                 break;
         }
@@ -174,11 +165,6 @@ public class MainActivity extends AppCompatActivity {
                 // User clicked OK button
             }
         });
-        /*       builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                //do nothing
-            }
-        });   */
         // Create the AlertDialog
         AlertDialog dialog = builder.create();
 		dialog.show();

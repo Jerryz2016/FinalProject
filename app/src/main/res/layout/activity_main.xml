@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
         android:fontFamily="serif"
-        android:text="Smart Home"
+        android:text="@string/smarthome"
         android:textAllCaps="true"
         android:textColor="@android:color/background_light"
         android:textSize="40sp"

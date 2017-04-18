@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="OK"
+        android:text="@string/ok"
         android:background="@android:color/holo_green_light"
         android:textColor="#FFFFFF"
         android:textSize="20sp"

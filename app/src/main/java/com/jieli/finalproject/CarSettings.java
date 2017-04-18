@@ -37,7 +37,7 @@ public class CarSettings extends AppCompatActivity {
     /**
      * The car settings.
      */
-    private String[] carSettings = {"Temperature", "Radio", "GPS", "Lights"};
+    private String[] carSettings; //= {"Temperature", "Radio", "GPS", "Lights"};
 
     /**
      * The boolean for identify is tablet or not.
@@ -85,8 +85,6 @@ public class CarSettings extends AppCompatActivity {
 
                 switch (position) {
                     case 0: //setting temperature
-                        //                       Toast toast0 = Toast.makeText(ctx, "Setting CarTemperature", Toast.LENGTH_SHORT);
-                        //                        toast0.show();
                         //========= To get saved/ retrieve data from TEMPERATURE==============
                         spTemperature = getSharedPreferences(TEMPFILE, Context.MODE_PRIVATE);
                         String temp = spTemperature.getString(TEMP, "25");
@@ -112,16 +110,11 @@ public class CarSettings extends AppCompatActivity {
                         // to start radioActivity() and retrieve data from DB and display; allow to add, remove and update stations
                         // and store all the changes to DB
 
-                        //                        Toast toast1 = Toast.makeText(ctx, "Setting radio,Click the item which you want to set", Toast.LENGTH_SHORT);
-                        //                        toast1.show();
                         Intent intentRadio = new Intent(ctx, CarRadio.class);
                         startActivity(intentRadio);
 
                         break;
                     case 2: //setting GPS
-                        //                        Log.d("listview", "GPS");
-                        //                        Toast toast2 = Toast.makeText(ctx, "Start Google Map", Toast.LENGTH_SHORT);
-                        //                        toast2.show();
                         Uri gmmIntentUri = Uri.parse("geo:0,0?q=1385 Woodroffe Avenue,Ottawa");
                         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                         mapIntent.setPackage("com.google.android.apps.maps");
@@ -150,6 +143,7 @@ public class CarSettings extends AppCompatActivity {
                 }
             }
         });
+        carSettings = getResources().getStringArray(R.array.carsettings_array);
         // listview for all the settings of the car
         listView.setAdapter(new ArrayAdapter<>(this, R.layout.car_lv_row, carSettings));
 

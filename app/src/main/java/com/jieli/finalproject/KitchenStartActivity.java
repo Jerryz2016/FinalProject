@@ -17,8 +17,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -178,7 +176,7 @@ public class KitchenStartActivity extends AppCompatActivity {
                         fragmentFridge.setArguments(bundle);
                         getSupportFragmentManager().beginTransaction().replace(R.id.detail, fragmentFridge).commit();
                     } else {
-                        Cursor c = dbAdapter.getItem(position);
+                        Cursor c = dbAdapter.getItem(button_List.getItemAtPosition(position).toString());
                         Intent intent = new Intent(getApplicationContext(), FridgeActivity.class);
                         intent.putExtra("position", position);
                         intent.putExtra("type", c.getString(c.getColumnIndex("type")));

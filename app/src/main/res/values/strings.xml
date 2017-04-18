@@ -13,6 +13,8 @@
     <string name="garageLight">Garage Light</string>
     <string name="house_Save">House Save</string>
 
+    <string name="smarthome">Smart Home</string>
+
     <string name="LivingRoom">Living Room!</string>
     <string name="ControlPanel">Control Panel</string>
     <string name="MoreAppliances">More Appliances Room</string>
@@ -92,8 +94,6 @@
     <string name="kitchen_kitchen_light_button_on">ON</string>
     <string name="kitchen_kitchen_light_button_off">OFF</string>
 
-    <string name="help_living_title">Car Help</string>
-
     <string name="help_living_version">Help for Living Room Version 1.0, by Group3:Jie Wang\n</string>
     <string name="help_living_room_info">
         1.Click the icon of LivingRoom on the Toolbar, Living Room screen will be displayed.\n
@@ -107,4 +107,37 @@
     <string name="button_negative">Cancel</string>
     <string name="button_positive">OK</string>
 
+    //------ Car setting strings--------
+    <string-array name="carsettings_array">
+        <item> Temperature</item>
+        <item> Radio</item>
+        <item> GPS</item>
+        <item> Lights</item>
+    </string-array>
+    <string name="smartcar">Smart Automobile</string>
+    <string name="carexit">Exit</string>
+    <string name="headlight">headlight</string>
+    <string name="turnon">high</string>
+    <string name="turnoff">normal</string>
+    <string name="headlights">HeadLights:</string>
+    <string name="dimlight">DimLight:</string>
+    <string name="carlightssetting">Car Lights Setting</string>
+    <string name="volumecontrol">Volume control:</string>
+    <string name="radiosetting">Car Radio Setting</string>
+    <string name="caradd">ADD</string>
+    <string name="addchannel">Add Radio.Channel</string>
+    <string name="radioname">Radio Name</string>
+    <string name="channel">channel</string>
+    <string name="volume">Volume:</string>
+    <string name="textmute">mute</string>
+    <string name="textoff">Mute</string>
+    <string name="texton">On</string>
+    <string name="radio_name">Radio Name:</string>
+    <string name="radio_channel">Channel:</string>
+    <string name="newname">new name</string>
+    <string name="newchannel">new channel</string>
+    <string name="radioupdate">Update</string>
+    <string name="radiodelete">Delete</string>
+    <string name="radiocancel">Cancel</string>
+    <string name="radiodialog">dialog</string>
 </resources>

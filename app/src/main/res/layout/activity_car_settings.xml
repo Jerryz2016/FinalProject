@@ -12,7 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_green_dark"
-            android:text="Smart Automobile"
+            android:text="@string/smartcar"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="36sp"
@@ -25,7 +25,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:background="@android:color/holo_green_light"
-            android:text="exit"
+            android:text="@string/carexit"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />

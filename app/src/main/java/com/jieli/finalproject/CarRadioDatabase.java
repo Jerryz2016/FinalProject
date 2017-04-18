@@ -49,7 +49,7 @@ public class CarRadioDatabase extends SQLiteOpenHelper {
     /**
      * The Constant SETCOL of the radio channnel column.
      */
-    public static final String SETCOL = "channel";
+    static final String SETCOL = "channel";
 
     /**
      * The Constant CREATE_RADIO_TABLE.
@@ -71,7 +71,7 @@ public class CarRadioDatabase extends SQLiteOpenHelper {
     /**
      * Oncreate() method creates the db.
      *
-     * @param db the db
+     * @param db the db of the radio setting database
      */
     @Override
     public void onCreate(SQLiteDatabase db) {

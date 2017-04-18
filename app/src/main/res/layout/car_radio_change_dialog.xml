@@ -18,7 +18,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="@android:color/background_light"
-        android:text="dialog"
+        android:text="@string/radiodialog"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp" />

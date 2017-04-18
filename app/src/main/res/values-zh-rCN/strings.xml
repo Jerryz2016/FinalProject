@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="app_name">FinalProject</string>
+    <string name="app_name">期末设计</string>
     <string name="main_menu1">客厅</string>
     <string name="main_menu2">厨房</string>
     <string name="main_menu3">房间</string>
@@ -11,6 +11,8 @@
     <string name="help_kitchen">厨房设置说明</string>
     <string name="help_house">房间设置说明</string>
     <string name="help_car">汽车设置说明</string>
+
+    <string name="smarthome">智能家居</string>
 
     <string name="ok">确定</string>
     <string name="cancel">取消</string>
@@ -44,6 +46,40 @@
     <string name="MoreAppliances">添加</string>
     <string name="DataBase">数据库</string>
     <string name="Exit">退出</string>
+
+    //------ Car setting strings--------
+    <string-array name="carsettings_array">
+        <item> 温度</item>
+        <item> 收音机</item>
+        <item> GPS</item>
+        <item> 车灯</item>
+    </string-array>
+    <string name="smartcar">智能汽车</string>
+    <string name="carexit">退出</string>
+    <string name="headlight">前灯</string>
+    <string name="turnon">强光</string>
+    <string name="turnoff">正常</string>
+    <string name="headlights">前灯：</string>
+    <string name="dimlight">阅读灯:</string>
+    <string name="carlightssetting">汽车灯光设置</string>
+    <string name="volumecontrol">音量控制:</string>
+    <string name="radiosetting">收音机设置</string>
+    <string name="caradd">添加</string>
+    <string name="addchannel">添加收音机.频道</string>
+    <string name="radioname">名称</string>
+    <string name="channel">频率</string>
+    <string name="volume">音量:</string>
+    <string name="textmute">静音</string>
+    <string name="textoff">静音</string>
+    <string name="texton">打开</string>
+    <string name="radio_name">名称:</string>
+    <string name="radio_channel">频率:</string>
+    <string name="newname">新名称</string>
+    <string name="newchannel">新频率</string>
+    <string name="radioupdate">更新</string>
+    <string name="radiodelete">删除</string>
+    <string name="radiocancel">取消</string>
+    <string name="radiodialog">对话框</string>
 
 
 </resources>
