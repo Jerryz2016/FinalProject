@@ -11,6 +11,23 @@
     <string name="help_kitchen">厨房设置说明</string>
     <string name="help_house">房间设置说明</string>
     <string name="help_car">汽车设置说明</string>
+    <string name="house_dooropen">车库门开</string>
+    <string name="house_doorclose">车库门关</string>
+    <string name="house_lightopen">车库灯开</string>
+    <string name="house_lightclose">车库灯关</string>
+    <string name="house_datasave">房间数据保存</string>
+    <string name="house_introductiondetail">房间详细介绍</string>
+    <string name="GarageDoor">车库门  </string>
+    <string name="garageLight">车库灯</string>
+    <string name="house_Save">房间设置保存</string>
+    <string name="house_timeinput">时间输入</string>
+    <string name="house_tempinput">温度输入</string>
+    <string name="house_currenttemp">当前温度</string>
+    <string name="house_mintemp">最低温度</string>
+    <string name="house_maxtemp">最高温度</string>
+    <string name="House_Help">房间设置说明</string>
+    <string name="house_changetemprature">设置房间温度</string>
+    <string name="house_delete">删除</string>
 
     <string name="ok">确定</string>
     <string name="cancel">取消</string>

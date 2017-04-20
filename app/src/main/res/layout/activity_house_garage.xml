@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!--Author: Haixia Feng
+*File name: activity_house_garage.xml
+*Course: CST2355 Graphical Interface Programming
+*Assignment: Final Project
+*Date: April 10, 2017
+*Professor: Eric Torunski
+-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
