@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Author: Haixia Feng
+*File name: activity_housesetting_start.xml(sw600dp)
+*Course: CST2355 Graphical Interface Programming
+*Assignment: Final Project
+*Date: April 10, 2017
+*Professor: Eric Torunski, David Lareau
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    tools:context="com.jieli.finalproject.HouseSettingStartActivity">
+
+
+    <TextView
+        android:id="@+id/houseSettingHeaderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00FFFF"
+        android:text="House Setting"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/houseSettingButton_List"
+        style="@style/Widget.AppCompat.ListView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/houseSettingHeaderTitle"
+        android:layout_weight="1"
+        android:background="@android:color/holo_green_light" />
+
+    <Button
+        android:id="@+id/houseSettingButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#00FFFF"
+        android:text="Return"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/house_fragmentholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/houseSettingButton_List"
+        android:background="@drawable/sky"
+        android:layout_below="@+id/houseSettingHeaderTitle"
+        android:layout_above="@+id/houseSettingButton1" />
+
+
+</RelativeLayout>
