@@ -1,54 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Author: Haixia Feng
+*File name: activity_housesetting_start.xml
+*Course: CST2355 Graphical Interface Programming
+*Assignment: Final Project
+*Date: April 10, 2017
+*Professor: Eric Torunski
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jieli.finalproject.HouseSettingStartActivity"
-    android:background="#FFFFFF">
+    android:background="@drawable/sky"
+    tools:context="com.jieli.finalproject.HouseSettingStartActivity">
 
     <LinearLayout
+        android:id="@+id/houseSettingHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/houseSettingHeader"
-        android:orientation="vertical"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/houseSettingHeaderTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D9F72F"
-            android:text="Smart House Setting"
-            android:textStyle="bold"
+            android:background="#00FFFF"
+            android:text="House Setting"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="24sp"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/houseSettingButton_List"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
+
 
         <Button
             android:id="@+id/houseSettingButton1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#D9F72F"
+            android:background="#00FFFF"
             android:text="Return"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
 
-
-
     </LinearLayout>
-
-
-
-
 
 </RelativeLayout>

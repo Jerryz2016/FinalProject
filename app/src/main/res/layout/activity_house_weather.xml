@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Author: Haixia Feng
+*File name: activity_house_weather.xml
+*Course: CST2355 Graphical Interface Programming
+*Assignment: Final Project
+*Date: April 10, 2017
+*Professor: Eric Torunski
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/temp_layout"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context="com.jieli.finalproject.OutsideWeather">
+tools:context="com.jieli.finalproject.HouseWeather">
 
 <FrameLayout
     android:id="@+id/house_fragholder"

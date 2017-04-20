@@ -123,9 +123,10 @@ public class MainActivity extends AppCompatActivity {
                 dialog(R.string.help_kitchen_title, R.string.help_kitchen_version, R.string.help_kitchen_info);
                 break;
             case R.id.help_house:
-                Log.d("Toolbar", "Help selected");
-                Toast toast8 = Toast.makeText(this, "Replace with Instruction for Smart Hose Version 1.0, by Group3:Haixia Feng", Toast.LENGTH_LONG);
-                toast8.show();
+//                Toast toast8 = Toast.makeText(this, "Replace with Instruction for Smart Hose Version 1.0, by Group3:Haixia Feng", Toast.LENGTH_LONG);
+//                toast8.show();
+
+            dialog(R.string.help_house_title, R.string.help_house_version,R.string.help_house_info);
                 break;
             case R.id.help_car:
                 dialog(R.string.help_car_title, R.string.help_car_version, R.string.help_car_info);
