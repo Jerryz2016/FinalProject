@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/radio_change_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jieli.finalproject.CarRadioChange">
@@ -9,56 +10,86 @@
         android:id="@+id/car_radio_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@android:color/holo_green_light"
         android:gravity="center"
-        android:text="Car Radio Update/Delete"
+        android:text="@string/radiosetting"
         android:textColor="@android:color/background_light"
-        android:textSize="30sp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/radio_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/car_radio_setting"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
-        android:text="Radio Name:"
+        android:layout_below="@+id/radio_change_id"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="19dp"
+        android:text="@string/radio_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <TextView
         android:id="@+id/radio_channel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/channel_change"
         android:layout_alignStart="@+id/radio_name"
-        android:text="Channel:"
+        android:layout_below="@+id/radio_name"
+        android:layout_marginTop="33dp"
+        android:text="@string/radio_channel"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
     <EditText
         android:id="@+id/radio_change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/radio_name"
-        android:layout_alignBottom="@+id/radio_name"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp"
+        android:layout_below="@+id/radio_change_id"
+        android:layout_marginLeft="44dp"
         android:ems="10"
-        android:hint="new name"
+        android:hint="@string/newname"
         android:inputType="text|textPersonName" />
 
     <EditText
         android:id="@+id/channel_change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/radio_change"
-        android:layout_below="@+id/radio_name"
-        android:layout_marginTop="51dp"
+        android:layout_alignBaseline="@+id/radio_channel"
+        android:layout_alignBottom="@+id/radio_channel"
+        android:layout_alignParentEnd="true"
         android:ems="10"
-        android:hint="new channel"
+        android:hint="@string/newchannel"
         android:inputType="numberDecimal" />
+
+    <!--<TextView
+        android:id="@+id/volume_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radio_channel"
+        android:layout_below="@+id/channel_change"
+        android:layout_marginTop="57dp"
+        android:text="Volume:"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <ToggleButton
+        android:id="@+id/mute_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/volume_text"
+        android:layout_alignBottom="@+id/volume_text"
+        android:layout_alignParentEnd="true"
+        android:text="mute"
+        android:textOff="Mute"
+        android:textOn="On"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/volume_set"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/volume_text"
+        android:layout_centerHorizontal="true" />-->
 
     <Button
         android:id="@+id/radio_update"
@@ -66,9 +97,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/radio_cancel"
         android:layout_alignStart="@+id/radio_cancel"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="42dp"
         android:background="@android:color/holo_green_light"
-        android:text="Update"
+        android:text="@string/radioupdate"
         android:textColor="@android:color/background_light" />
 
     <Button
@@ -79,7 +110,7 @@
         android:layout_alignBottom="@+id/radio_update"
         android:layout_alignEnd="@+id/channel_change"
         android:background="@android:color/holo_red_light"
-        android:text="Delete"
+        android:text="@string/radiodelete"
         android:textColor="@android:color/background_light" />
 
     <Button
@@ -89,7 +120,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/channel_change"
         android:layout_marginBottom="61dp"
-        android:text="Cancel" />
+        android:text="@string/radiocancel" />
 
     <TextView
         android:id="@+id/radio_change_id"

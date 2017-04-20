@@ -15,16 +15,40 @@ import android.widget.TextView;
 import static android.app.Activity.RESULT_OK;
 
 /**
- * Created by Jerry on 27-Mar-17.
+ * CST2335 Final Project-Automobile activity
+ * The Class CarTemperatureFragment, used to creat a fragment for displaying the temperature stored
+ * or setting the new temperature either for a tablet or a phone.
+ * Group     3
+ * @author Jieli Zhang
+ * @version v1.0
+ * Date      2017.04.12
  */
-
 public class CarTemperatureFragment extends Fragment {
+
+    /**
+     * parent, the context.
+     */
     Context parent;
+
+    /**
+     * The temp from the bundle passed.
+     */
     String temp;
+
+    /** isTablet is a boolean from the bundle passed. */
     boolean isTablet;
+
+    /**
+     * The text temperature user inputs.
+     */
     TextView textTemperature;
 
 
+    /**
+     * OnCreate.
+     *
+     * @param b the bundle
+     */
     //no matter how you got here, the data is in the getArguments
     @Override
     public void onCreate(Bundle b) {
@@ -36,12 +60,25 @@ public class CarTemperatureFragment extends Fragment {
 
     }
 
+    /**
+     * OnAttach metohd to attach the context.
+     *
+     * @param context the context
+     */
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         parent = context;
     }
 
+    /**
+     * To create the view of the fragment.
+     *
+     * @param inflater           the inflater
+     * @param container          the container
+     * @param savedInstanceState the saved instance state
+     * @return the view
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
@@ -60,8 +97,9 @@ public class CarTemperatureFragment extends Fragment {
                     //call store method in CarSettings class to save temp in db
                     Log.i("carfragment isTablet: ", temp);
                     ((CarSettings) getActivity()).saveTempPreference("cartemperatrure", temp);
-                    CarTemperatureFragment mf = (CarTemperatureFragment) getFragmentManager().findFragmentById(R.id.car_framelayout); //remove the sw600dp frage
-                    getFragmentManager().beginTransaction().remove(mf).commit();
+                    CarTemperatureFragment mf = (CarTemperatureFragment) getFragmentManager().
+                            findFragmentById(R.id.car_framelayout);   // find the fragmnet
+                    getFragmentManager().beginTransaction().remove(mf).commit();  //remove the car_framelayour from sw600dp
 
                 } else {
                     Intent data = new Intent();
@@ -75,7 +113,10 @@ public class CarTemperatureFragment extends Fragment {
         return gui;
     }
 
-    public CarTemperatureFragment() {
-        super();
-    }
+    /**
+     * constructor for instantiating a new car temperature fragment.
+     */
+	public CarTemperatureFragment() {
+		super();
+	}
 }

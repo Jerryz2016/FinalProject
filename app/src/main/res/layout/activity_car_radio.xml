@@ -7,6 +7,17 @@
     tools:context="com.jieli.finalproject.CarRadio">
 
     <TextView
+        android:id="@+id/volume_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mute_button"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/holo_green_light"
+        android:text="@string/volumecontrol"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
         android:id="@+id/car_radio_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +32,7 @@
     <ListView
         android:id="@+id/listView_radio"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="260dp"
         android:layout_alignParentStart="true"
         android:layout_marginTop="50dp" />
 
@@ -39,8 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="17dp"
-        android:text="ADD"
-        android:textSize="24sp"
+        android:text="@string/caradd"
+        android:textSize="22sp"
         android:layout_alignTop="@+id/addchennal_text"
         android:layout_alignParentEnd="true" />
 
@@ -51,7 +62,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/listView_radio"
         android:background="@android:color/holo_green_light"
-        android:text="Add Radio.Channel"
+        android:text="@string/addchannel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
@@ -62,7 +73,7 @@
         android:layout_below="@+id/textView_addradio"
         android:layout_marginTop="11dp"
         android:ems="10"
-        android:hint="RadioName"
+        android:hint="@string/radioname"
         android:inputType="text" />
 
     <EditText
@@ -74,8 +85,38 @@
         android:layout_marginEnd="26dp"
         android:layout_toStartOf="@+id/addradio_ok"
         android:ems="10"
-        android:hint="channel"
+        android:hint="@string/channel"
         android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/volume_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/volume"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_above="@+id/radio_exit"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp" />
+
+    <ToggleButton
+        android:id="@+id/mute_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/volume_text"
+        android:layout_alignBottom="@+id/volume_text"
+        android:layout_alignParentEnd="true"
+        android:text="@string/textmute"
+        android:textOff="@string/textoff"
+        android:textOn="@string/texton"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/volume_set"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/volume_text"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/radio_exit"
@@ -83,7 +124,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/holo_green_light"
         android:gravity="center"
-        android:text="Exit"
+        android:text="@string/carexit"
         android:textColor="@android:color/background_light"
         android:textSize="14sp"
         android:layout_above="@+id/progress_bar"

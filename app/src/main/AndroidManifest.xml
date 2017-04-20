@@ -33,11 +33,15 @@
         <activity android:name=".KitchenStartActivity" />
         <activity android:name=".MicrowaveActivity" />
         <activity android:name=".FridgeActivity" />
+
+        <activity android:name=".KitchenLightActivity" />
+
         <activity android:name=".HouseSettingStartActivity" />
         <activity android:name=".Tv" />
         <activity android:name=".LivingDatabaseActivity" />
         <activity android:name=".CarTemperature" />
         <activity android:name=".CarLights" />
+
         <activity
             android:name=".CarRadio"
             android:windowSoftInputMode="adjustPan" />

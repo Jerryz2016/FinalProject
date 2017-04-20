@@ -14,18 +14,64 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+/**
+ * CST2335 Final Project-Automobile activity
+ * The Class CarSettings, is the main inferface of the Automobile activity, it calls the related
+ * other activity to set the Temperature,lights,GPS and radio of the car.
+ * Group     3
+ * @author Jieli Zhang
+ * @version v1.0
+ * Date      2017.04.12
+ */
 public class CarSettings extends AppCompatActivity {
+
+    /** The ctx. */
     Context ctx;
+
+    /**
+     * The list view.
+     */
     //    String temp;
     private ListView listView;
-    private String[] carSettings = {"Temperature", "Radio", "GPS", "Lights"};
+
+    /**
+     * The car settings.
+     */
+    private String[] carSettings; //= {"Temperature", "Radio", "GPS", "Lights"};
+
+    /**
+     * The boolean for identify is tablet or not.
+     */
     private Boolean isTablet;  // for to check if a phone or tablet
+
+    /** The sp temperature. */
     private SharedPreferences spTemperature;
+
+    /**
+     * The tempfile.
+     */
     private static String TEMPFILE = "com.jieli.finalproject.cartempsetting";
+
+    /**
+     * The temp.
+     */
     private static String TEMP = "cartemperatrure";
+
+    /**
+     * The headlights.
+     */
     private static String HEADLIGHTS = "headlights";
+
+    /**
+     * The dimmable.
+     */
     private static String DIMMABLE = "dimmable";
 
+    /**
+     * On create.
+     *
+     * @param savedInstanceState the saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +85,6 @@ public class CarSettings extends AppCompatActivity {
 
                 switch (position) {
                     case 0: //setting temperature
-                        //                       Toast toast0 = Toast.makeText(ctx, "Setting CarTemperature", Toast.LENGTH_SHORT);
-//                        toast0.show();
                         //========= To get saved/ retrieve data from TEMPERATURE==============
                         spTemperature = getSharedPreferences(TEMPFILE, Context.MODE_PRIVATE);
                         String temp = spTemperature.getString(TEMP, "25");
@@ -48,6 +92,11 @@ public class CarSettings extends AppCompatActivity {
                         bundle.putString("carTemperature", temp);
 
                         if (isTablet) {
+                            bundle.putBoolean("isTablet", true);
+                            CarTemperatureFragment tfrag = new CarTemperatureFragment();
+
+                            tfrag.setArguments(bundle);
+                            getFragmentManager().beginTransaction().replace(R.id.car_framelayout, tfrag).commit();
 
 
                         } else {
@@ -61,16 +110,11 @@ public class CarSettings extends AppCompatActivity {
                         // to start radioActivity() and retrieve data from DB and display; allow to add, remove and update stations
                         // and store all the changes to DB
 
-//                        Toast toast1 = Toast.makeText(ctx, "Setting radio,Click the item which you want to set", Toast.LENGTH_SHORT);
-//                        toast1.show();
                         Intent intentRadio = new Intent(ctx, CarRadio.class);
                         startActivity(intentRadio);
 
                         break;
                     case 2: //setting GPS
-//                        Log.d("listview", "GPS");
-//                        Toast toast2 = Toast.makeText(ctx, "Start Google Map", Toast.LENGTH_SHORT);
-//                        toast2.show();
                         Uri gmmIntentUri = Uri.parse("geo:0,0?q=1385 Woodroffe Avenue,Ottawa");
                         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                         mapIntent.setPackage("com.google.android.apps.maps");
@@ -99,6 +143,7 @@ public class CarSettings extends AppCompatActivity {
                 }
             }
         });
+        carSettings = getResources().getStringArray(R.array.carsettings_array);
         // listview for all the settings of the car
         listView.setAdapter(new ArrayAdapter<>(this, R.layout.car_lv_row, carSettings));
 
@@ -117,6 +162,13 @@ public class CarSettings extends AppCompatActivity {
         Log.d("carSettings", "OnCreate");
     }
 
+    /**
+     * On activity result.
+     *
+     * @param requestCode the request code
+     * @param resultCode the result code
+     * @param data the data
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (resultCode == RESULT_OK) {
@@ -137,6 +189,12 @@ public class CarSettings extends AppCompatActivity {
         }
     }
 
+    /**
+     * Save temp preference.
+     *
+     * @param key  the key
+     * @param temp the temp
+     */
     public void saveTempPreference(String key, String temp) {
         //======== To save data to preference ===================
         Log.i("saveTempPreference: ", temp);
@@ -144,28 +202,43 @@ public class CarSettings extends AppCompatActivity {
 
     }
 
+    /**
+     * On resume.
+     */
     protected void onResume() {
         super.onResume();
         Log.d("CarSettings", "OnResume");
     }
 
+    /**
+     * On start.
+     */
     protected void onStart() {
         super.onStart();
         Log.d("CarSettings", "OnStart");
 
     }
 
+    /**
+     * On pause.
+     */
     protected void onPause() {
         super.onPause();
         Log.e("CarSettingsn", "onPause");
     }
 
+    /**
+     * On stop.
+     */
     protected void onStop() {
         super.onStop();
         Log.e("CarSettings", "onStop");
-    }
+	}
 
-    public void onDestory() {
-        super.onDestroy();
-    }
+	/**
+	 * On destory.
+	 */
+	public void onDestory() {
+		super.onDestroy();
+	}
 }

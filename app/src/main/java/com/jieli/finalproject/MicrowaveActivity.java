@@ -1,3 +1,12 @@
+/**
+ * File name: 	MicrowaveActivity.java
+ * Author:  	Group3 Chao Gu
+ * Course: 		CST2335 – Graphical Interface Programming
+ * Project: 	Final
+ * Date: 		April 14, 2017
+ * Professor: 	ERIC TORUNSKI
+ * Purpose: 	To create a microwave control panel.
+ */
 package com.jieli.finalproject;
 
 import android.os.Bundle;
@@ -7,12 +16,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
-
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * The MicrowaveActivity Class is to create a control panel of microwave.
+ * A number picker is to allow user to set the timer. Until user click on start button, otherwise the two other button will be invisible
+ * Click on start button, timer begins to count down. Start button become invisible, reset and stop buttons become visible
+ *
+ * @author Group3 Chao Gu
+ * @version v1.0.
+ */
 public class MicrowaveActivity extends AppCompatActivity {
+    /* ATTRIBUTES	-----------------------------------------------------	*/
     TextView textTimer;
     NumberPicker minutePicker, secondPicker;
     Button reset, start, stop;
@@ -22,6 +38,10 @@ public class MicrowaveActivity extends AppCompatActivity {
     CountDownTimer timer;
     Button returnButton;
 
+    /**
+     * To create a visible view for MicrowaveActivity, initialize the attributes and create some methods
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +73,7 @@ public class MicrowaveActivity extends AppCompatActivity {
 
 
 
-        minutePicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener(){
+        minutePicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener(){   //---- read the value from minute picker and set it into the minute
             @Override
             public void onValueChange (NumberPicker picker, int oldVal, int newVal){
                 minute = Long.valueOf(newVal);
@@ -65,7 +85,8 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
-        secondPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener(){
+
+        secondPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener(){   //---read the value from second picker and set it into the second
             @Override
             public void onValueChange (NumberPicker picker, int oldVal, int newVal){
                 second = Long.valueOf(newVal);
@@ -77,7 +98,8 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
-        start.setOnClickListener(new View.OnClickListener() {
+
+        start.setOnClickListener(new View.OnClickListener() {            //---when start button is clicked, disable all other button, make the clock start to count down
             @Override
             public void onClick(View v) {
                 timer = new CountDownTimer(milliseconds, 1000) {
@@ -101,7 +123,8 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
-        reset.setOnClickListener(new View.OnClickListener() {
+
+        reset.setOnClickListener(new View.OnClickListener() {           //---when reset button is clicked, disable all other button except start button, reset the clock
             @Override
             public void onClick(View v) {
                 timer.cancel();
@@ -120,7 +143,8 @@ public class MicrowaveActivity extends AppCompatActivity {
             }
         });
 
-        stop.setOnClickListener(new View.OnClickListener() {
+
+        stop.setOnClickListener(new View.OnClickListener() {          //---when stop button is clicked, disable all other button except start button, reset the clock
             @Override
             public void onClick(View v) {
                 timer.cancel();

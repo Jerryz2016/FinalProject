@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FFFFFF"
-    tools:context="com.jieli.finalproject.FridgeActivity">
+    tools:context="com.jieli.finalproject.FragmentFridge">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -83,16 +83,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/setting"
         android:text="@string/kitchen_setting"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:textSize="24dp"
-        android:background="#FF0800"
-        android:layout_marginTop="5dp"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_return"
-        android:text="@string/kitchen_return"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:textSize="24dp"

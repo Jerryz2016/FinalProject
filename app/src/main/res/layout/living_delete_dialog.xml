@@ -8,18 +8,19 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/holo_orange_light"
         android:textColorLink="@color/colorAccent" />
 
     <TextView
-        android:id="@+id/dialog_info"
+        android:id="@+id/warning"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="@android:color/background_light"
-        android:text="@string/radiodialog"
+        android:text="Do you want delete this lamp3? "
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 </LinearLayout>
+
