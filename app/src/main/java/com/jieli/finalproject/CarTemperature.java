@@ -5,10 +5,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+/**
+ * CST2335 Final Project-Automobile activity
+ * The Class CarTemperature, using an empty framelayout for a phone to add a fragment to
+ * display temperature.
+ * Group     3
+ * @author Jieli Zhang
+ * @version v1.0
+ * Date      2017.04.12
+ */
 //  create empty temperature fragment
 public class CarTemperature extends AppCompatActivity {
 
-
+    /**
+     * On create.
+     *
+     * @param savedInstanceState the saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +39,12 @@ public class CarTemperature extends AppCompatActivity {
         }
     }
 
+    /**
+     * On start.
+     */
     protected void onStart() {
         super.onStart();
         Log.i("CarTemperature activity", "In onStart()");
 
-    }
+	}
 }
